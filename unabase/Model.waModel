@@ -8,8 +8,8 @@
 				"panel": {
 					"isOpen": "true",
 					"position": {
-						"X": 10,
-						"Y": 8
+						"X": 40,
+						"Y": 10
 					},
 					"pathVisible": true
 				}
@@ -30,8 +30,8 @@
 				"panel": {
 					"isOpen": "true",
 					"position": {
-						"X": 57,
-						"Y": 338
+						"X": 32,
+						"Y": 374
 					},
 					"pathVisible": true
 				}
@@ -73,8 +73,8 @@
 				"panel": {
 					"isOpen": "true",
 					"position": {
-						"X": 281,
-						"Y": 786
+						"X": 303,
+						"Y": 854
 					},
 					"pathVisible": true
 				}
@@ -93,7 +93,7 @@
 		},
 		"model": {
 			"workspaceLeft": 0,
-			"workspaceTop": 601
+			"workspaceTop": 0
 		}
 	},
 	"dataClasses": [
