@@ -1,1 +1,479 @@
-{    "toJSON": true,    "dbInfo": [{        "name": "Model",        "uuid": ""    }],    "extraProperties": {        "version": "1",        "classes": {        },        "model": {}    },    "dataClasses": []}
+﻿{
+	"toJSON": true,
+	"extraProperties": {
+		"version": "1",
+		"classes": {
+			"Empresa": {
+				"panelColor": "#70CCC2",
+				"panel": {
+					"isOpen": "true",
+					"position": {
+						"X": 10,
+						"Y": 8
+					},
+					"pathVisible": true
+				}
+			},
+			"Contacto": {
+				"panelColor": "#D7E3BC",
+				"panel": {
+					"isOpen": "true",
+					"position": {
+						"X": 403,
+						"Y": 23
+					},
+					"pathVisible": true
+				}
+			},
+			"Proyecto": {
+				"panelColor": "#8DB3E2",
+				"panel": {
+					"isOpen": "true",
+					"position": {
+						"X": 57,
+						"Y": 338
+					},
+					"pathVisible": true
+				}
+			},
+			"Usuario": {
+				"panelColor": "#B8CCE4",
+				"panel": {
+					"isOpen": "true",
+					"position": {
+						"X": 408,
+						"Y": 352
+					}
+				}
+			},
+			"Cotizacion": {
+				"panelColor": "#70CCC2",
+				"panel": {
+					"isOpen": "true",
+					"position": {
+						"X": 27,
+						"Y": 623
+					},
+					"pathVisible": true
+				}
+			},
+			"Item": {
+				"panelColor": "#E5B9B7",
+				"panel": {
+					"isOpen": "true",
+					"position": {
+						"X": 265,
+						"Y": 610
+					},
+					"pathVisible": true
+				}
+			},
+			"CategoriaItem": {
+				"panelColor": "#eee",
+				"panel": {
+					"isOpen": "true",
+					"position": {
+						"X": 281,
+						"Y": 786
+					},
+					"pathVisible": true
+				}
+			},
+			"DetalleCotizacion": {
+				"panelColor": "#BFBFBF",
+				"panel": {
+					"isOpen": "true",
+					"position": {
+						"X": 17,
+						"Y": 886
+					},
+					"pathVisible": true
+				}
+			}
+		},
+		"model": {
+			"workspaceLeft": 0,
+			"workspaceTop": 601
+		}
+	},
+	"dataClasses": [
+		{
+			"collectionName": "EmpresaCollection",
+			"className": "Empresa",
+			"attributes": [
+				{
+					"name": "RUT",
+					"scope": "public",
+					"type": "long",
+					"kind": "storage",
+					"primKey": "true",
+					"unique": "true"
+				},
+				{
+					"name": "razonSocial",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage",
+					"unique": true
+				},
+				{
+					"name": "alias",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage",
+					"unique": true
+				},
+				{
+					"name": "direccion",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
+				},
+				{
+					"name": "url",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
+				},
+				{
+					"name": "email",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
+				},
+				{
+					"name": "telefono",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
+				},
+				{
+					"name": "contactoCollection",
+					"scope": "public",
+					"reversePath": true,
+					"path": "empresa",
+					"type": "ContactoCollection",
+					"kind": "relatedEntities"
+				},
+				{
+					"name": "categoriaItemCollection",
+					"scope": "public",
+					"reversePath": true,
+					"path": "empresa",
+					"type": "CategoriaItemCollection",
+					"kind": "relatedEntities"
+				}
+			],
+			"primKey": "UUID"
+		},
+		{
+			"collectionName": "ContactoCollection",
+			"className": "Contacto",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"type": "long",
+					"autosequence": "true",
+					"unique": "true",
+					"primKey": "true"
+				},
+				{
+					"name": "email",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage",
+					"unique": true,
+					"autoComplete": false
+				},
+				{
+					"name": "apPat",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
+				},
+				{
+					"name": "apMat",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
+				},
+				{
+					"name": "nombres",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
+				},
+				{
+					"name": "telefono",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
+				},
+				{
+					"name": "empresa",
+					"scope": "public",
+					"path": "empresa",
+					"type": "Empresa",
+					"kind": "relatedEntity"
+				},
+				{
+					"name": "usuarioCollection",
+					"scope": "public",
+					"reversePath": true,
+					"path": "contacto",
+					"type": "UsuarioCollection",
+					"kind": "relatedEntities"
+				},
+				{
+					"name": "proyectoCollection",
+					"scope": "public",
+					"reversePath": true,
+					"path": "cliente",
+					"type": "ProyectoCollection",
+					"kind": "relatedEntities"
+				}
+			]
+		},
+		{
+			"collectionName": "ProyectoCollection",
+			"className": "Proyecto",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"type": "long",
+					"autosequence": "true",
+					"unique": "true",
+					"primKey": "true"
+				},
+				{
+					"name": "referencia",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
+				},
+				{
+					"name": "creador",
+					"scope": "public",
+					"path": "Usuario",
+					"type": "Usuario",
+					"kind": "relatedEntity"
+				},
+				{
+					"name": "cliente",
+					"scope": "public",
+					"type": "Contacto",
+					"kind": "relatedEntity",
+					"path": "Contacto"
+				},
+				{
+					"name": "cotizacionCollection",
+					"scope": "public",
+					"reversePath": true,
+					"path": "proyecto",
+					"type": "CotizacionCollection",
+					"kind": "relatedEntities"
+				}
+			]
+		},
+		{
+			"collectionName": "UsuarioCollection",
+			"className": "Usuario",
+			"attributes": [
+				{
+					"name": "UUID",
+					"scope": "public",
+					"type": "uuid",
+					"kind": "storage",
+					"autogenerate": true,
+					"primKey": "true",
+					"unique": "true"
+				},
+				{
+					"name": "username",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage",
+					"unique": true
+				},
+				{
+					"name": "password",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
+				},
+				{
+					"name": "contacto",
+					"scope": "public",
+					"path": "Contacto",
+					"type": "Contacto",
+					"kind": "relatedEntity"
+				},
+				{
+					"name": "proyectoCollection",
+					"scope": "public",
+					"reversePath": true,
+					"path": "creador",
+					"type": "ProyectoCollection",
+					"kind": "relatedEntities"
+				}
+			]
+		},
+		{
+			"collectionName": "CotizacionCollection",
+			"className": "Cotizacion",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"type": "long",
+					"autosequence": "true",
+					"unique": "true",
+					"primKey": "true"
+				},
+				{
+					"name": "proyecto",
+					"scope": "public",
+					"path": "Proyecto",
+					"type": "Proyecto",
+					"kind": "relatedEntity"
+				},
+				{
+					"name": "detalleCotizacionCollection",
+					"scope": "public",
+					"reversePath": true,
+					"path": "cotizacion",
+					"type": "DetalleCotizacionCollection",
+					"kind": "relatedEntities"
+				}
+			]
+		},
+		{
+			"collectionName": "ItemCollection",
+			"className": "Item",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"type": "long",
+					"autosequence": "true",
+					"unique": "true",
+					"primKey": "true"
+				},
+				{
+					"name": "categoria",
+					"scope": "public",
+					"path": "CategoriaItem",
+					"type": "CategoriaItem",
+					"kind": "relatedEntity"
+				},
+				{
+					"name": "detalleCotizacionCollection",
+					"scope": "public",
+					"reversePath": true,
+					"path": "item",
+					"type": "DetalleCotizacionCollection",
+					"kind": "relatedEntities"
+				}
+			]
+		},
+		{
+			"collectionName": "CategoriaItemCollection",
+			"className": "CategoriaItem",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"type": "long",
+					"autosequence": "true",
+					"unique": "true",
+					"primKey": "true"
+				},
+				{
+					"name": "nombre",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
+				},
+				{
+					"name": "empresa",
+					"scope": "public",
+					"path": "Empresa",
+					"type": "Empresa",
+					"kind": "relatedEntity"
+				},
+				{
+					"name": "itemCollection",
+					"scope": "public",
+					"reversePath": true,
+					"path": "categoria",
+					"type": "ItemCollection",
+					"kind": "relatedEntities"
+				},
+				{
+					"name": "detalleCotizacionCollection",
+					"scope": "public",
+					"reversePath": true,
+					"path": "categoria",
+					"type": "DetalleCotizacionCollection",
+					"kind": "relatedEntities"
+				}
+			]
+		},
+		{
+			"collectionName": "DetalleCotizacionCollection",
+			"className": "DetalleCotizacion",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"type": "long",
+					"autosequence": "true",
+					"unique": "true",
+					"primKey": "true"
+				},
+				{
+					"name": "cotizacion",
+					"scope": "public",
+					"path": "Cotizacion",
+					"type": "Cotizacion",
+					"kind": "relatedEntity"
+				},
+				{
+					"name": "item",
+					"scope": "public",
+					"path": "Item",
+					"type": "Item",
+					"kind": "relatedEntity"
+				},
+				{
+					"name": "categoria",
+					"scope": "public",
+					"path": "CategoriaItem",
+					"type": "CategoriaItem",
+					"kind": "relatedEntity"
+				},
+				{
+					"name": "cantidad",
+					"scope": "public",
+					"type": "number",
+					"kind": "storage"
+				},
+				{
+					"name": "precioUnitario",
+					"scope": "public",
+					"type": "number",
+					"kind": "storage"
+				},
+				{
+					"name": "factor",
+					"scope": "public",
+					"type": "number",
+					"kind": "storage"
+				}
+			]
+		}
+	],
+	"type": []
+}
