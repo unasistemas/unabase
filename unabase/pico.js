@@ -1,1 +1,0 @@
-﻿alert("pico pa wakanda");
