@@ -17,7 +17,7 @@ function myLoginListener(userName, password) {
                 fullName: p.username,
                 //name: p.contacto.nombres, 
                 //fullName: p.contacto.nombres + " " + p.contacto.apPat + " " + p.contacto.apMat, 
-                belongsTo: theGroups
+                belongsTo: theGroups,
                 storage:{
                     time: connectTime,
                     access: "Acceso desde la tabla Usuario"
