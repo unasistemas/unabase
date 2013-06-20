@@ -23,6 +23,7 @@ function myLoginListener(userName, password) {
                     access: "Acceso desde la tabla Usuario"
                 }
             };
+        }
         else
             return { error: 1024, errorMessage:"Nombre de usuario y/o contraseña no válidos. Por favor, reintente." }
     }

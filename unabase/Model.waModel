@@ -20,8 +20,8 @@
 					"isOpen": "true",
 					"pathVisible": true,
 					"position": {
-						"X": 470,
-						"Y": 5
+						"X": 605,
+						"Y": 15
 					}
 				}
 			},
@@ -123,7 +123,7 @@
 		},
 		"model": {
 			"workspaceLeft": 0,
-			"workspaceTop": 100
+			"workspaceTop": 0
 		}
 	},
 	"dataClasses": [
@@ -221,13 +221,6 @@
 					"type": "string"
 				},
 				{
-					"name": "empresa",
-					"kind": "relatedEntity",
-					"scope": "public",
-					"type": "Empresa",
-					"path": "empresa"
-				},
-				{
 					"name": "usuarioCollection",
 					"kind": "relatedEntities",
 					"scope": "public",
@@ -242,6 +235,13 @@
 					"type": "ProyectoCollection",
 					"reversePath": true,
 					"path": "cliente"
+				},
+				{
+					"name": "empresa",
+					"scope": "public",
+					"path": "Empresa",
+					"type": "Empresa",
+					"kind": "relatedEntity"
 				}
 			]
 		},
@@ -386,20 +386,20 @@
 					"type": "string"
 				},
 				{
-					"name": "contactoCollection",
-					"kind": "relatedEntities",
-					"scope": "public",
-					"type": "ContactoCollection",
-					"reversePath": true,
-					"path": "empresa"
-				},
-				{
 					"name": "categoriaItemCollection",
 					"kind": "relatedEntities",
 					"scope": "public",
 					"type": "CategoriaItemCollection",
 					"reversePath": true,
 					"path": "empresa"
+				},
+				{
+					"name": "contactoCollection",
+					"scope": "public",
+					"reversePath": true,
+					"path": "empresa",
+					"type": "ContactoCollection",
+					"kind": "relatedEntities"
 				}
 			]
 		},
@@ -526,18 +526,24 @@
 			]
 		},
 		{
-			"collectionName": "DataClass1Collection",
+			"name": "DataClass1",
 			"className": "DataClass1",
+			"collectionName": "DataClass1Collection",
+			"scope": "public",
 			"extends": "Usuario"
 		},
 		{
-			"collectionName": "DataClass2Collection",
+			"name": "DataClass2",
 			"className": "DataClass2",
+			"collectionName": "DataClass2Collection",
+			"scope": "public",
 			"extends": "Usuario"
 		},
 		{
-			"collectionName": "DataClass3Collection",
+			"name": "DataClass3",
 			"className": "DataClass3",
+			"collectionName": "DataClass3Collection",
+			"scope": "public",
 			"extends": "Usuario"
 		}
 	]
