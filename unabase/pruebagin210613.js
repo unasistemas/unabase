@@ -1,1 +1,1 @@
-﻿commint 1dostres
+﻿alert("gin 1");alert("gin 2");alert("gin 3");
