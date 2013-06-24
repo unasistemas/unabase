@@ -13,11 +13,18 @@ function constructor (id) {
 	this.load = function (data) {// @lock
 
 	// @region namespaceDeclaration// @startlock
+	var buttonSearch = {};	// @button
 	// @endregion// @endlock
 
 	// eventHandlers// @lock
 
+	buttonSearch.click = function buttonSearch_click (event)// @startlock
+	{// @endlock
+
+	};// @lock
+
 	// @region eventManager// @startlock
+	WAF.addListener(this.id + "_buttonSearch", "click", buttonSearch.click, "WAF");
 	// @endregion// @endlock
 
 	};// @lock
