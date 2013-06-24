@@ -1,1 +1,0 @@
-﻿alert("gin 1");alert("gin 2");alert("gin 3");
