@@ -3,6 +3,26 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
+#{id}dataGrid1 {
+	 width: 300px;
+	 height: 300px;
+	 top: 200px;
+	 left: 46px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}label1 {
+	 width: 54px;
+	 height: 15px;
+	 top: 101px;
+	 left: 6px;
+	
+	 position: absolute;
+	 
+}
+
 #{id}containerFiltro {
 	 width: 700px;
 	 height: 102px;

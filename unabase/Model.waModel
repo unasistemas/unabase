@@ -52,8 +52,8 @@
 					"isOpen": "true",
 					"pathVisible": true,
 					"position": {
-						"X": 88,
-						"Y": 676
+						"X": 32,
+						"Y": 647
 					}
 				}
 			},
@@ -89,41 +89,11 @@
 						"Y": 886
 					}
 				}
-			},
-			"DataClass1": {
-				"panelColor": "#70CCC2",
-				"panel": {
-					"isOpen": "true",
-					"position": {
-						"X": 994,
-						"Y": 20
-					}
-				}
-			},
-			"DataClass2": {
-				"panelColor": "#BFBFBF",
-				"panel": {
-					"isOpen": "true",
-					"position": {
-						"X": 994,
-						"Y": 20
-					}
-				}
-			},
-			"DataClass3": {
-				"panelColor": "#7F7F7F",
-				"panel": {
-					"isOpen": "true",
-					"position": {
-						"X": 994,
-						"Y": 20
-					}
-				}
 			}
 		},
 		"model": {
-			"workspaceLeft": 0,
-			"workspaceTop": 720
+			"workspaceLeft": 899,
+			"workspaceTop": 0
 		}
 	},
 	"dataClasses": [
@@ -277,17 +247,25 @@
 				},
 				{
 					"name": "proyectoCollection",
+					"kind": "relatedEntities",
 					"scope": "public",
-					"reversePath": true,
-					"path": "cotizacion",
 					"type": "ProyectoCollection",
-					"kind": "relatedEntities"
+					"reversePath": true,
+					"path": "cotizacion"
 				},
 				{
 					"name": "modificado",
-					"scope": null,
+					"kind": "storage",
+					"scope": "public",
 					"type": "date",
-					"kind": "storage"
+					"simpleDate": false
+				},
+				{
+					"name": "totalNeto",
+					"kind": "calculated",
+					"scope": "public",
+					"type": "number",
+					"scriptKind": "javascript"
 				}
 			]
 		},
@@ -344,18 +322,6 @@
 					"kind": "storage",
 					"scope": "public",
 					"type": "number"
-				},
-				{
-					"name": "totalNeto",
-					"scope": "public",
-					"type": "number",
-					"kind": "calculated",
-					"scriptKind": "javascript",
-					"onGet": [
-						{
-							"from": "guidedModel.DetalleCotizacion.totalNeto.onGet"
-						}
-					]
 				}
 			]
 		},
@@ -498,12 +464,20 @@
 				},
 				{
 					"name": "cotizacion",
+					"kind": "relatedEntity",
 					"scope": "public",
-					"path": "Cotizacion",
 					"type": "Cotizacion",
-					"kind": "relatedEntity"
+					"path": "Cotizacion"
+				},
+				{
+					"name": "isNegocio",
+					"scope": "public",
+					"type": "bool",
+					"kind": "calculated",
+					"scriptKind": "javascript"
 				}
-			]
+			],
+			"publishAsJSGlobal": false
 		},
 		{
 			"name": "Usuario",
@@ -549,27 +523,6 @@
 					"path": "creador"
 				}
 			]
-		},
-		{
-			"name": "DataClass1",
-			"className": "DataClass1",
-			"collectionName": "DataClass1Collection",
-			"scope": "public",
-			"extends": "Usuario"
-		},
-		{
-			"name": "DataClass2",
-			"className": "DataClass2",
-			"collectionName": "DataClass2Collection",
-			"scope": "public",
-			"extends": "Usuario"
-		},
-		{
-			"name": "DataClass3",
-			"className": "DataClass3",
-			"collectionName": "DataClass3Collection",
-			"scope": "public",
-			"extends": "Usuario"
 		}
 	],
 	"type": []
