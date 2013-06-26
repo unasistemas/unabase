@@ -7,24 +7,17 @@ function constructor (id) {
 
 	// @region beginComponentDeclaration// @startlock
 	var $comp = this;
-	this.name = 'menu';
+	this.name = 'edit';
 	// @endregion// @endlock
 
 	this.load = function (data) {// @lock
 
 	// @region namespaceDeclaration// @startlock
-	var menuItemProyectos = {};	// @menuItem
 	// @endregion// @endlock
 
 	// eventHandlers// @lock
 
-	menuItemProyectos.click = function menuItemProyectos_click (event)// @startlock
-	{// @endlock
-		$$("componentModulo").loadComponent("/modulos/proyectos/index.waComponent");
-	};// @lock
-
 	// @region eventManager// @startlock
-	WAF.addListener(this.id + "_menuItemProyectos", "click", menuItemProyectos.click, "WAF");
 	// @endregion// @endlock
 
 	};// @lock

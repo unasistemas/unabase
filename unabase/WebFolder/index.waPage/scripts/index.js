@@ -12,18 +12,29 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	{// @endlock
 		$$("loginDialog").hide();
 		$$("componentMenu").hide();
+		$$("componentModulo").hide();
+		$$("componentModulo").removeComponent();
 		$$("loginDialog").showLoginDialog();
+		
+
 	};// @lock
 
 	loginDialog.login = function loginDialog_login (event)// @startlock
 	{// @endlock
+
 		$$("loginDialog").show();
 		$$("componentMenu").show();
+		$$("componentModulo").show();
 	};// @lock
 
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
 	{// @endlock
-		$$("loginDialog").showLoginDialog();
+		var isLogged = (WAF.directory.currentUser() !== null);
+		if (!isLogged)
+			$$("loginDialog").showLoginDialog();
+		else
+			loginDialog.login();
+		
 	};// @lock
 
 // @region eventManager// @startlock

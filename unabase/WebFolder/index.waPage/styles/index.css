@@ -35,6 +35,8 @@
 	 border-right-width: 0px;
 	 border-bottom-width: 0px;
 	 
+	 display: block;
+	 
 }
 
 #componentModulo {
@@ -42,6 +44,8 @@
 	 height: 450px;
 	
 	 position: relative;
+	 
+	 display: block;
 	 
 }
 
