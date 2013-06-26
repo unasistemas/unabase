@@ -6,7 +6,7 @@
 Thumbs.db
 
 # Wakanda data
-## *.waData
+*.waData
 
 # Wakanda preferences
 *.waPreferences

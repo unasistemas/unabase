@@ -3,11 +3,11 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
-#{id}richText7 {
+#{id}richText1 {
 	 width: 103px;
 	 height: 15px;
-	 top: auto;
-	 left: auto;
+	 top: 142px;
+	 left: 6px;
 	
 	 position: absolute;
 	 border-top-width: 0px;
@@ -17,21 +17,41 @@
 	 
 }
 
+#{id}textField4 {
+	 width: 246px;
+	 height: 22px;
+	 top: 69px;
+	 left: 90px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}label5 {
+	 width: 39px;
+	 height: 15px;
+	 top: 72.5px;
+	 left: 46px;
+	
+	 position: absolute;
+	 
+}
+
 #{id}textField1 {
 	 width: 130px;
 	 height: 22px;
-	 top: auto;
-	 left: auto;
+	 top: 176px;
+	 left: 150px;
 	
 	 position: absolute;
 	 
 }
 
 #{id}buttonEditarContacto {
-	 width: 92px;
+	 width: 106px;
 	 height: 22px;
-	 top: auto;
-	 left: auto;
+	 top: 96px;
+	 left: 343px;
 	
 	 position: absolute;
 	 
@@ -40,28 +60,18 @@
 #{id}buttonEditarCliente {
 	 width: 92px;
 	 height: 22px;
-	 top: auto;
-	 left: auto;
+	 top: 69px;
+	 left: 343px;
 	
 	 position: absolute;
 	 
 }
 
 #{id}textField3 {
-	 width: 130px;
+	 width: 246px;
 	 height: 22px;
-	 top: auto;
-	 left: auto;
-	
-	 position: absolute;
-	 
-}
-
-#{id}textField2 {
-	 width: 130px;
-	 height: 22px;
-	 top: auto;
-	 left: auto;
+	 top: 96px;
+	 left: 90px;
 	
 	 position: absolute;
 	 
@@ -70,8 +80,8 @@
 #{id}richText5 {
 	 width: 26px;
 	 height: 15px;
-	 top: auto;
-	 left: auto;
+	 top: 20px;
+	 left: 13px;
 	
 	 position: absolute;
 	 border-top-width: 0px;
@@ -84,8 +94,8 @@
 #{id}label4 {
 	 width: 115px;
 	 height: 15px;
-	 top: 3.5px;
-	 left: -120px;
+	 top: 179.5px;
+	 left: 30px;
 	
 	 position: absolute;
 	 
@@ -94,18 +104,8 @@
 #{id}label3 {
 	 width: 44px;
 	 height: 15px;
-	 top: 3.5px;
-	 left: -49px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}label2 {
-	 width: 39px;
-	 height: 15px;
-	 top: 3.5px;
-	 left: -44px;
+	 top: 99.5px;
+	 left: 41px;
 	
 	 position: absolute;
 	 
@@ -113,8 +113,8 @@
 
 #{id}richText12 {
 	 z-index: 4;
-	 width: 70px;
-	 height: 15px;
+	 width: 59px;
+	 height: 16px;
 	 top: 11px;
 	 left: 30px;
 	
@@ -157,8 +157,8 @@
 
 #{id}richText6 {
 	 z-index: 4;
-	 width: 39px;
-	 height: 15px;
+	 width: 34px;
+	 height: 16px;
 	 top: 11px;
 	 left: 30px;
 	
@@ -234,8 +234,8 @@
 
 #{id}richText4 {
 	 z-index: 4;
-	 width: 44px;
-	 height: 15px;
+	 width: 37px;
+	 height: 16px;
 	 top: 12px;
 	 left: 30px;
 	
@@ -254,8 +254,8 @@
 }
 
 #{id}richText11 {
-	 width: 173px;
-	 height: 15px;
+	 width: 160px;
+	 height: 16px;
 	 top: 26px;
 	 left: 49px;
 	
@@ -264,8 +264,8 @@
 }
 
 #{id}richText10 {
-	 width: 37px;
-	 height: 15px;
+	 width: 31px;
+	 height: 16px;
 	 top: 26px;
 	 left: 10px;
 	
@@ -274,8 +274,8 @@
 }
 
 #{id}richText9 {
-	 width: 246px;
-	 height: 15px;
+	 width: 221px;
+	 height: 16px;
 	 top: 10px;
 	 left: 29px;
 	
@@ -284,8 +284,8 @@
 }
 
 #{id}richText8 {
-	 width: 16px;
-	 height: 15px;
+	 width: 14px;
+	 height: 16px;
 	 top: 10px;
 	 left: 10px;
 	
