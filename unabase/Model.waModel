@@ -20,8 +20,8 @@
 					"isOpen": "true",
 					"pathVisible": true,
 					"position": {
-						"X": 605,
-						"Y": 15
+						"X": 1397,
+						"Y": 37
 					}
 				}
 			},
@@ -92,7 +92,7 @@
 			}
 		},
 		"model": {
-			"workspaceLeft": 899,
+			"workspaceLeft": 1465,
 			"workspaceTop": 0
 		}
 	},
@@ -212,6 +212,18 @@
 					"scope": "public",
 					"type": "Empresa",
 					"path": "Empresa"
+				},
+				{
+					"name": "nombreCompleto",
+					"scope": "public",
+					"type": "string",
+					"kind": "calculated",
+					"scriptKind": "javascript",
+					"onGet": [
+						{
+							"from": "guidedModel.Contacto.nombreCompleto.onGet"
+						}
+					]
 				}
 			]
 		},
@@ -432,6 +444,7 @@
 			"className": "Proyecto",
 			"collectionName": "ProyectoCollection",
 			"scope": "public",
+			"publishAsJSGlobal": false,
 			"attributes": [
 				{
 					"name": "ID",
@@ -471,13 +484,12 @@
 				},
 				{
 					"name": "isNegocio",
+					"kind": "calculated",
 					"scope": "public",
 					"type": "bool",
-					"kind": "calculated",
 					"scriptKind": "javascript"
 				}
-			],
-			"publishAsJSGlobal": false
+			]
 		},
 		{
 			"name": "Usuario",
