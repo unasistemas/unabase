@@ -21,10 +21,10 @@ function constructor (id) {
 	dataGridProyectos.onRowDblClick = function dataGridProyectos_onRowDblClick (event)// @startlock
 	{// @endlock
 		$$("componentModulo").loadComponent({
-			path:"/modulos/proyectos/edit.waComponent",
-			userData: {
-				id: event.data.row.cells[0].value
-			}
+			path:"/modulos/proyectos/edit.waComponent"//,
+			//userData: {
+			//	id: event.data.row.cells[0].value
+			//}
 		});
 	};// @lock
 

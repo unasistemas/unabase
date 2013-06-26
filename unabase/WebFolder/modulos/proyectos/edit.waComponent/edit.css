@@ -3,6 +3,26 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
+#{id}richText5 {
+	 width: 67px;
+	 height: 15px;
+	 top: 11px;
+	 left: 30px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}richText4 {
+	 width: 16px;
+	 height: 15px;
+	 top: 11px;
+	 left: 11px;
+	
+	 position: absolute;
+	 
+}
+
 #{id}richText3 {
 	 z-index: 4;
 	 width: 70px;
@@ -136,10 +156,12 @@
 }
 
 #{id}accordionDetalle {
-	 width: 100%;
+	 width: 500px;
 	 height: 370px;
+	 top: 179px;
+	 left: 17px;
 	
-	 position: relative;
+	 position: absolute;
 	 
 }
 

@@ -9,6 +9,8 @@ function constructor (id) {
 	var $comp = this;
 	this.name = 'edit';
 	// @endregion// @endlock
+	
+	//($comp.userData);
 
 	this.load = function (data) {// @lock
 
