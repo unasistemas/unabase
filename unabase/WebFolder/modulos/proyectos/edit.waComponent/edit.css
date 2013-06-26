@@ -3,11 +3,89 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
-#{id}textField3 {
-	 width: 355px;
+#{id}richText7 {
+	 width: 103px;
+	 height: 15px;
+	 top: auto;
+	 left: auto;
+	
+	 position: absolute;
+	 border-top-width: 0px;
+	 border-left-width: 0px;
+	 border-right-width: 0px;
+	 border-bottom-width: 0px;
+	 
+}
+
+#{id}textField1 {
+	 width: 130px;
 	 height: 22px;
-	 top: 71px;
-	 left: 65px;
+	 top: auto;
+	 left: auto;
+	
+	 position: absolute;
+	 
+}
+
+#{id}buttonEditarContacto {
+	 width: 92px;
+	 height: 22px;
+	 top: auto;
+	 left: auto;
+	
+	 position: absolute;
+	 
+}
+
+#{id}buttonEditarCliente {
+	 width: 92px;
+	 height: 22px;
+	 top: auto;
+	 left: auto;
+	
+	 position: absolute;
+	 
+}
+
+#{id}textField3 {
+	 width: 130px;
+	 height: 22px;
+	 top: auto;
+	 left: auto;
+	
+	 position: absolute;
+	 
+}
+
+#{id}textField2 {
+	 width: 130px;
+	 height: 22px;
+	 top: auto;
+	 left: auto;
+	
+	 position: absolute;
+	 
+}
+
+#{id}richText5 {
+	 width: 26px;
+	 height: 15px;
+	 top: auto;
+	 left: auto;
+	
+	 position: absolute;
+	 border-top-width: 0px;
+	 border-left-width: 0px;
+	 border-right-width: 0px;
+	 border-bottom-width: 0px;
+	 
+}
+
+#{id}label4 {
+	 width: 115px;
+	 height: 15px;
+	 top: 3.5px;
+	 left: -120px;
 	
 	 position: absolute;
 	 
@@ -16,18 +94,8 @@
 #{id}label3 {
 	 width: 44px;
 	 height: 15px;
-	 top: 74.5px;
-	 left: 16px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}textField2 {
-	 width: 352px;
-	 height: 22px;
-	 top: 43px;
-	 left: 68px;
+	 top: 3.5px;
+	 left: -49px;
 	
 	 position: absolute;
 	 
@@ -36,18 +104,140 @@
 #{id}label2 {
 	 width: 39px;
 	 height: 15px;
-	 top: 46.5px;
-	 left: 24px;
+	 top: 3.5px;
+	 left: -44px;
 	
 	 position: absolute;
 	 
 }
 
-#{id}richText5 {
-	 width: 21px;
-	 height: 16px;
-	 top: 13px;
-	 left: 12px;
+#{id}richText12 {
+	 z-index: 4;
+	 width: 70px;
+	 height: 15px;
+	 top: 11px;
+	 left: 30px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}container9 {
+	 z-index: 3;
+	 top: 40px;
+	 bottom: -2px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}container8 {
+	 z-index: 3;
+	 height: 40px;
+	 top: 0px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}container7 {
+	 z-index: 2;
+	 height: 40px;
+	 top: 330px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}richText6 {
+	 z-index: 4;
+	 width: 39px;
+	 height: 15px;
+	 top: 11px;
+	 left: 30px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}container6 {
+	 z-index: 3;
+	 top: 40px;
+	 bottom: -1px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}container5 {
+	 z-index: 3;
+	 height: 40px;
+	 top: 0px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}container4 {
+	 z-index: 2;
+	 height: 40px;
+	 top: 290px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}container1 {
+	 z-index: 2;
+	 height: 290px;
+	 top: 0px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}container2 {
+	 z-index: 3;
+	 height: 40px;
+	 top: 0px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}container3 {
+	 z-index: 3;
+	 top: 40px;
+	 bottom: -1px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}richText4 {
+	 z-index: 4;
+	 width: 44px;
+	 height: 15px;
+	 top: 12px;
+	 left: 30px;
 	
 	 position: absolute;
 	 
@@ -64,8 +254,8 @@
 }
 
 #{id}richText11 {
-	 width: 160px;
-	 height: 16px;
+	 width: 173px;
+	 height: 15px;
 	 top: 26px;
 	 left: 49px;
 	
@@ -74,8 +264,8 @@
 }
 
 #{id}richText10 {
-	 width: 31px;
-	 height: 16px;
+	 width: 37px;
+	 height: 15px;
 	 top: 26px;
 	 left: 10px;
 	
@@ -84,8 +274,8 @@
 }
 
 #{id}richText9 {
-	 width: 221px;
-	 height: 16px;
+	 width: 246px;
+	 height: 15px;
 	 top: 10px;
 	 left: 29px;
 	
@@ -94,43 +284,10 @@
 }
 
 #{id}richText8 {
-	 width: 14px;
-	 height: 16px;
+	 width: 16px;
+	 height: 15px;
 	 top: 10px;
 	 left: 10px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}richText3 {
-	 z-index: 4;
-	 width: 59px;
-	 height: 16px;
-	 top: 11px;
-	 left: 30px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}richText2 {
-	 z-index: 4;
-	 width: 34px;
-	 height: 16px;
-	 top: 11px;
-	 left: 30px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}richText1 {
-	 z-index: 4;
-	 width: 37px;
-	 height: 16px;
-	 top: 11px;
-	 left: 30px;
 	
 	 position: absolute;
 	 
@@ -161,125 +318,6 @@
 	 height: 22px;
 	 top: 59px;
 	 left: 130px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}containerGeneral {
-	 z-index: 2;
-	 height: 290px;
-	 top: 0px;
-	 left: 0px;
-	 right: 0px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}containerDetalle {
-	 z-index: 2;
-	 height: 40px;
-	 top: 290px;
-	 left: 0px;
-	 right: 0px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}containerCondiciones {
-	 z-index: 2;
-	 height: 40px;
-	 top: 330px;
-	 left: 0px;
-	 right: 0px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}containerGeneralTitle {
-	 z-index: 3;
-	 height: 40px;
-	 top: 0px;
-	 left: 0px;
-	 right: 0px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}containerGeneralContent {
-	 z-index: 3;
-	 top: 40px;
-	 bottom: -1px;
-	 left: 0px;
-	 right: 0px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}containerDetalleTitle {
-	 z-index: 3;
-	 height: 40px;
-	 top: 0px;
-	 left: 0px;
-	 right: 0px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}containerDetalleText {
-	 z-index: 3;
-	 top: 40px;
-	 bottom: -1px;
-	 left: 0px;
-	 right: 0px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}containerCondicionesTitle {
-	 z-index: 3;
-	 height: 40px;
-	 top: 0px;
-	 left: 0px;
-	 right: 0px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}containerCondicionesText {
-	 z-index: 3;
-	 top: 40px;
-	 bottom: -2px;
-	 left: 0px;
-	 right: 0px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}buttonEditarCliente {
-	 width: 139px;
-	 height: 22px;
-	 top: 43px;
-	 left: 432px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}buttonEditarContacto {
-	 width: 140px;
-	 height: 22px;
-	 top: 72px;
-	 left: 432px;
 	
 	 position: absolute;
 	 

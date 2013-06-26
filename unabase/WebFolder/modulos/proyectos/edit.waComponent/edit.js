@@ -15,10 +15,16 @@ function constructor (id) {
 	this.load = function (data) {// @lock
 
 	// @region namespaceDeclaration// @startlock
+	var textField1 = {};	// @textField
 	var textFieldNombreProyecto = {};	// @textField
 	// @endregion// @endlock
 
 	// eventHandlers// @lock
+
+	textField1.change = function textField1_change ()// @startlock
+	{// @endlock
+		sources.proyecto.save();
+	};// @lock
 
 	textFieldNombreProyecto.change = function textFieldNombreProyecto_change (event)// @startlock
 	{// @endlock
@@ -26,6 +32,7 @@ function constructor (id) {
 	};// @lock
 
 	// @region eventManager// @startlock
+	WAF.addListener(this.id + "_textField1", "change", textField1.change, "WAF");
 	WAF.addListener(this.id + "_textFieldNombreProyecto", "change", textFieldNombreProyecto.change, "WAF");
 	// @endregion// @endlock
 
