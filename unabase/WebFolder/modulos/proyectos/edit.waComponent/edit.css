@@ -3,9 +3,69 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
-#{id}richText11 {
-	 width: 173px;
+#{id}textField3 {
+	 width: 355px;
+	 height: 22px;
+	 top: 71px;
+	 left: 65px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}label3 {
+	 width: 44px;
 	 height: 15px;
+	 top: 74.5px;
+	 left: 16px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}textField2 {
+	 width: 352px;
+	 height: 22px;
+	 top: 43px;
+	 left: 68px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}label2 {
+	 width: 39px;
+	 height: 15px;
+	 top: 46.5px;
+	 left: 24px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}richText5 {
+	 width: 21px;
+	 height: 16px;
+	 top: 13px;
+	 left: 12px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}label1 {
+	 width: 115px;
+	 height: 15px;
+	 top: 62.5px;
+	 left: 10px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}richText11 {
+	 width: 160px;
+	 height: 16px;
 	 top: 26px;
 	 left: 49px;
 	
@@ -14,8 +74,8 @@
 }
 
 #{id}richText10 {
-	 width: 37px;
-	 height: 15px;
+	 width: 31px;
+	 height: 16px;
 	 top: 26px;
 	 left: 10px;
 	
@@ -24,8 +84,8 @@
 }
 
 #{id}richText9 {
-	 width: 246px;
-	 height: 15px;
+	 width: 221px;
+	 height: 16px;
 	 top: 10px;
 	 left: 29px;
 	
@@ -34,8 +94,8 @@
 }
 
 #{id}richText8 {
-	 width: 16px;
-	 height: 15px;
+	 width: 14px;
+	 height: 16px;
 	 top: 10px;
 	 left: 10px;
 	
@@ -45,43 +105,10 @@
 
 #{id}richText3 {
 	 z-index: 4;
-	 width: 70px;
-	 height: 15px;
+	 width: 59px;
+	 height: 16px;
 	 top: 11px;
 	 left: 30px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}container9 {
-	 z-index: 3;
-	 top: 40px;
-	 bottom: -2px;
-	 left: 0px;
-	 right: 0px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}container8 {
-	 z-index: 3;
-	 height: 40px;
-	 top: 0px;
-	 left: 0px;
-	 right: 0px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}container7 {
-	 z-index: 2;
-	 height: 40px;
-	 top: 330px;
-	 left: 0px;
-	 right: 0px;
 	
 	 position: absolute;
 	 
@@ -89,43 +116,10 @@
 
 #{id}richText2 {
 	 z-index: 4;
-	 width: 39px;
-	 height: 15px;
+	 width: 34px;
+	 height: 16px;
 	 top: 11px;
 	 left: 30px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}container6 {
-	 z-index: 3;
-	 top: 40px;
-	 bottom: -1px;
-	 left: 0px;
-	 right: 0px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}container5 {
-	 z-index: 3;
-	 height: 40px;
-	 top: 0px;
-	 left: 0px;
-	 right: 0px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}container4 {
-	 z-index: 2;
-	 height: 40px;
-	 top: 290px;
-	 left: 0px;
-	 right: 0px;
 	
 	 position: absolute;
 	 
@@ -133,8 +127,8 @@
 
 #{id}richText1 {
 	 z-index: 4;
-	 width: 44px;
-	 height: 15px;
+	 width: 37px;
+	 height: 16px;
 	 top: 11px;
 	 left: 30px;
 	
@@ -142,29 +136,37 @@
 	 
 }
 
-#{id}container3 {
-	 z-index: 3;
-	 top: 40px;
-	 bottom: -1px;
-	 left: 0px;
-	 right: 0px;
+#{id}accordionDetalle {
+	 width: 100%;
+	 height: 100%;
+	 top: auto;
+	 left: auto;
+	
+	 position: relative;
+	 
+}
+
+#{id}containerResumen {
+	 width: 100%;
+	 height: 100px;
+	 top: auto;
+	 left: auto;
+	
+	 position: relative;
+	 
+}
+
+#{id}textFieldNombreProyecto {
+	 width: 436px;
+	 height: 22px;
+	 top: 59px;
+	 left: 130px;
 	
 	 position: absolute;
 	 
 }
 
-#{id}container2 {
-	 z-index: 3;
-	 height: 40px;
-	 top: 0px;
-	 left: 0px;
-	 right: 0px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}container1 {
+#{id}containerGeneral {
 	 z-index: 2;
 	 height: 290px;
 	 top: 0px;
@@ -175,19 +177,111 @@
 	 
 }
 
-#{id}accordionDetalle {
-	 width: 100%;
-	 height: 100%;
+#{id}containerDetalle {
+	 z-index: 2;
+	 height: 40px;
+	 top: 290px;
+	 left: 0px;
+	 right: 0px;
 	
-	 position: relative;
+	 position: absolute;
 	 
 }
 
-#{id}containerResumen {
-	 width: 100%;
-	 height: 50px;
+#{id}containerCondiciones {
+	 z-index: 2;
+	 height: 40px;
+	 top: 330px;
+	 left: 0px;
+	 right: 0px;
 	
-	 position: relative;
+	 position: absolute;
+	 
+}
+
+#{id}containerGeneralTitle {
+	 z-index: 3;
+	 height: 40px;
+	 top: 0px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}containerGeneralContent {
+	 z-index: 3;
+	 top: 40px;
+	 bottom: -1px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}containerDetalleTitle {
+	 z-index: 3;
+	 height: 40px;
+	 top: 0px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}containerDetalleText {
+	 z-index: 3;
+	 top: 40px;
+	 bottom: -1px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}containerCondicionesTitle {
+	 z-index: 3;
+	 height: 40px;
+	 top: 0px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}containerCondicionesText {
+	 z-index: 3;
+	 top: 40px;
+	 bottom: -2px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}buttonEditarCliente {
+	 width: 139px;
+	 height: 22px;
+	 top: 43px;
+	 left: 432px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}buttonEditarContacto {
+	 width: 140px;
+	 height: 22px;
+	 top: 72px;
+	 left: 432px;
+	
+	 position: absolute;
 	 
 }
 
