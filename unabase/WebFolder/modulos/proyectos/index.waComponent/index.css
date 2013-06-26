@@ -3,6 +3,16 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
+#{id}label2 {
+	 width: 31px;
+	 height: 15px;
+	 top: 191.5px;
+	 left: 128px;
+	
+	 position: absolute;
+	 
+}
+
 #{id}label1 {
 	 width: 54px;
 	 height: 15px;
@@ -16,9 +26,10 @@
 #{id}dataGridProyectos {
 	 width: calc(100% - 205px);
 	 height: 100%;
+	 top: auto;
+	 left: auto;
 	
 	 position: relative;
-	 
 	 display: inline-block;
 	 vertical-align: top;
 	 
@@ -27,13 +38,14 @@
 #{id}componentBuscador {
 	 width: 200px;
 	 height: 100%;
+	 top: auto;
+	 left: auto;
 	
 	 position: relative;
 	 border-top-width: 0px;
 	 border-left-width: 0px;
 	 border-right-width: 0px;
 	 border-bottom-width: 0px;
-	 
 	 display: inline-block;
 	 vertical-align: top;
 	 
