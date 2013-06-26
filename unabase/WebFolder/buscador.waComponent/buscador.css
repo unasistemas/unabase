@@ -59,24 +59,6 @@
 	 
 }
 
-#{id}label1 {
-	 width: 31px;
-	 height: 15px;
-	 top: 3.5px;
-	 left: -36px;
-	
-	 
-}
-
-#{id}textField1 {
-	 width: 130px;
-	 height: 22px;
-	 top: 0px;
-	 left: 0px;
-	
-	 
-}
-
 #{id}richText3 {
 	 z-index: 4;
 	 width: 48px;
@@ -256,5 +238,7 @@
 }
 
 .waf-label {
-	display: block;
+	 display: block;
+	 
 }
+
