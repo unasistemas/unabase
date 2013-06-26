@@ -41,11 +41,9 @@
 
 #componentModulo {
 	 width: 100%;
-	 height: 350px;
-	 top: 88px;
-	 left: 0px;
+	 height: 400px;
 	
-	 position: absolute;
+	 position: relative;
 	 
 }
 
