@@ -1,6 +1,1 @@
-﻿{
-    "name"    : "index",    
-    "html"    : "index.html",
-    "styles"  : ["index.css"],
-    "scripts" : ["index.js"]
-}
+﻿{"name":"index","html":"index.html","scripts":["index.js"],"styles":["index.css"]}
