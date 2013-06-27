@@ -11,20 +11,16 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	loginDialog.logout = function loginDialog_logout (event)// @startlock
 	{// @endlock
 		$$("loginDialog").hide();
-		$$("componentMenu").hide();
-		$$("componentModulo").hide();
+		$$("containerNav").hide();
+		$$("containerBody").hide();
 		$$("componentModulo").removeComponent();
 		$$("loginDialog").showLoginDialog();
-		
-
 	};// @lock
 
 	loginDialog.login = function loginDialog_login (event)// @startlock
 	{// @endlock
-
-		$$("loginDialog").show();
-		$$("componentMenu").show();
-		$$("componentModulo").show();
+		$$("containerNav").show();
+		$$("containerBody").show();
 	};// @lock
 
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
