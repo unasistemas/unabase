@@ -33,16 +33,6 @@
 	 
 }
 
-#{id}menuItem2 {
-	 width: 110px;
-	 height: 30px;
-	 top: 0px;
-	 left: 0px;
-	
-	 position: absolute;
-	 
-}
-
 #{id}richText1 {
 	 width: 109px;
 	 height: 30px;
@@ -60,7 +50,7 @@
 	 left: auto;
 	
 	 position: relative;
-
+	 
 }
 
 #{id}menuItemProyectos {
@@ -74,5 +64,17 @@
 }
 
 .waf-menuItem-text {
-	font-size: 12px !important;
+	 font-size: 12px !important;
+	 
 }
+
+#{id}menuItemOrdenesCompra {
+	 width: 110px;
+	 height: 30px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
