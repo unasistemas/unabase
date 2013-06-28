@@ -42,8 +42,8 @@
 					"isOpen": "true",
 					"pathVisible": false,
 					"position": {
-						"X": 752,
-						"Y": 594
+						"X": 772,
+						"Y": 613
 					}
 				}
 			},
@@ -52,8 +52,8 @@
 				"panel": {
 					"isOpen": "true",
 					"position": {
-						"X": 501,
-						"Y": 589
+						"X": 499,
+						"Y": 604
 					},
 					"pathVisible": false
 				}
@@ -93,7 +93,7 @@
 		},
 		"model": {
 			"workspaceLeft": 0,
-			"workspaceTop": 100
+			"workspaceTop": 0
 		}
 	},
 	"dataClasses": [
