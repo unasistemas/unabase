@@ -1,514 +1,1 @@
-﻿{
-	"toJSON": true,
-	"extraProperties": {
-		"version": "1",
-		"classes": {
-			"Contacto": {
-				"panelColor": "#CCC1D9",
-				"panel": {
-					"isOpen": "true",
-					"pathVisible": false,
-					"position": {
-						"X": 518,
-						"Y": 21
-					}
-				}
-			},
-			"Empresa": {
-				"panelColor": "#CCC1D9",
-				"panel": {
-					"isOpen": "true",
-					"pathVisible": false,
-					"position": {
-						"X": 523,
-						"Y": 244
-					}
-				}
-			},
-			"Persona": {
-				"panelColor": "#D7E3BC",
-				"panel": {
-					"isOpen": "true",
-					"pathVisible": false,
-					"position": {
-						"X": 788,
-						"Y": 243
-					}
-				}
-			},
-			"Usuario": {
-				"panelColor": "#4FA997",
-				"panel": {
-					"isOpen": "true",
-					"pathVisible": false,
-					"position": {
-						"X": 772,
-						"Y": 613
-					}
-				}
-			},
-			"Sistema": {
-				"panelColor": "#fff",
-				"panel": {
-					"isOpen": "true",
-					"position": {
-						"X": 499,
-						"Y": 604
-					},
-					"pathVisible": false
-				}
-			},
-			"EntradaDirectorio": {
-				"panelColor": "#4FA997",
-				"panel": {
-					"isOpen": "true",
-					"position": {
-						"X": 179,
-						"Y": 155
-					}
-				}
-			},
-			"EntradaEmpleado": {
-				"panelColor": "#70CCC2",
-				"panel": {
-					"isOpen": "true",
-					"position": {
-						"X": 33,
-						"Y": 341
-					},
-					"pathVisible": true
-				}
-			},
-			"EntradaProveedor": {
-				"panelColor": "#996699",
-				"panel": {
-					"isOpen": "true",
-					"position": {
-						"X": 271,
-						"Y": 343
-					},
-					"pathVisible": true
-				}
-			}
-		},
-		"model": {
-			"workspaceLeft": 0,
-			"workspaceTop": 0
-		}
-	},
-	"dataClasses": [
-		{
-			"name": "Contacto",
-			"className": "Contacto",
-			"collectionName": "ContactoCollection",
-			"scope": "public",
-			"attributes": [
-				{
-					"name": "UUID",
-					"kind": "storage",
-					"scope": "publicOnServer",
-					"unique": true,
-					"autosequence": true,
-					"autogenerate": true,
-					"type": "uuid",
-					"primKey": true
-				},
-				{
-					"name": "docIdentidad",
-					"kind": "storage",
-					"scope": "public",
-					"unique": true,
-					"not_null": false,
-					"type": "string",
-					"pattern": "/^[0-9A-Z\\-]$/",
-					"fixedLength": 16,
-					"events": [
-						{
-							"kind": "onValidate",
-							"from": "guidedModel.Contacto.docIdentidad.events.onValidate"
-						}
-					]
-				},
-				{
-					"name": "isDocExtranjero",
-					"scope": null,
-					"type": "bool",
-					"kind": "storage",
-					"not_null": true
-				},
-				{
-					"name": "imagen",
-					"kind": "storage",
-					"scope": "public",
-					"type": "image"
-				},
-				{
-					"name": "entradasDirectorio",
-					"scope": "public",
-					"reversePath": true,
-					"path": "contacto",
-					"type": "EntradaDirectorioCollection",
-					"kind": "relatedEntities"
-				}
-			]
-		},
-		{
-			"name": "Persona",
-			"className": "Persona",
-			"collectionName": "PersonaCollection",
-			"scope": "public",
-			"extends": "Contacto",
-			"attributes": [
-				{
-					"name": "UUID",
-					"kind": "storage",
-					"scope": "public",
-					"unique": true,
-					"autosequence": true,
-					"autogenerate": true,
-					"type": "uuid"
-				},
-				{
-					"name": "docIdentidad",
-					"kind": "storage",
-					"scope": "public",
-					"unique": true,
-					"not_null": true,
-					"type": "string"
-				},
-				{
-					"name": "imagen",
-					"kind": "storage",
-					"scope": "public",
-					"type": "image"
-				},
-				{
-					"name": "apPat",
-					"kind": "calculated",
-					"scope": "public",
-					"type": "string",
-					"scriptKind": "javascript",
-					"not_null": false,
-					"autoComplete": true
-				},
-				{
-					"name": "apMat",
-					"kind": "calculated",
-					"scope": "public",
-					"type": "string",
-					"scriptKind": "javascript",
-					"autoComplete": true
-				},
-				{
-					"name": "nombres",
-					"kind": "calculated",
-					"scope": "public",
-					"type": "string",
-					"scriptKind": "javascript",
-					"not_null": true,
-					"autoComplete": true
-				},
-				{
-					"name": "isDocExtranjero",
-					"scope": "public"
-				}
-			]
-		},
-		{
-			"name": "Usuario",
-			"className": "Usuario",
-			"collectionName": "UsuarioCollection",
-			"scope": "public",
-			"extends": "Persona",
-			"attributes": [
-				{
-					"name": "UUID",
-					"kind": "storage",
-					"scope": "public",
-					"unique": true,
-					"autosequence": true,
-					"autogenerate": true,
-					"type": "uuid"
-				},
-				{
-					"name": "docIdentidad",
-					"kind": "storage",
-					"scope": "public",
-					"unique": true,
-					"not_null": true,
-					"type": "string"
-				},
-				{
-					"name": "imagen",
-					"kind": "storage",
-					"scope": "public",
-					"type": "image"
-				},
-				{
-					"name": "apPat",
-					"kind": "calculated",
-					"scope": "public",
-					"type": "string",
-					"scriptKind": "javascript",
-					"not_null": true
-				},
-				{
-					"name": "apMat",
-					"kind": "calculated",
-					"scope": "public",
-					"type": "string",
-					"scriptKind": "javascript"
-				},
-				{
-					"name": "userName",
-					"kind": "calculated",
-					"scope": "public",
-					"type": "string",
-					"scriptKind": "javascript",
-					"not_null": true,
-					"unique": true,
-					"pattern": "/^[a-z0-9\\.]$/",
-					"indexKind": "auto"
-				},
-				{
-					"name": "password",
-					"kind": "calculated",
-					"scope": "public",
-					"type": "string",
-					"scriptKind": "javascript",
-					"textAsBlob": true
-				},
-				{
-					"name": "isDocExtranjero",
-					"scope": "public"
-				},
-				{
-					"name": "entradasDirectorio",
-					"scope": "public"
-				},
-				{
-					"name": "isActivo",
-					"scope": "public",
-					"type": "bool",
-					"kind": "calculated",
-					"scriptKind": "javascript",
-					"not_null": true
-				},
-				{
-					"name": "entradaEmpleadoCollection",
-					"scope": "public",
-					"reversePath": true,
-					"path": "usuario",
-					"type": "EntradaEmpleadoCollection",
-					"kind": "relatedEntities"
-				}
-			]
-		},
-		{
-			"name": "Empresa",
-			"className": "Empresa",
-			"collectionName": "EmpresaCollection",
-			"scope": "public",
-			"extends": "Contacto",
-			"attributes": [
-				{
-					"name": "UUID",
-					"kind": "storage",
-					"scope": "public",
-					"unique": true,
-					"autosequence": true,
-					"autogenerate": true,
-					"type": "uuid"
-				},
-				{
-					"name": "docIdentidad",
-					"kind": "storage",
-					"scope": "public",
-					"unique": true,
-					"not_null": true,
-					"type": "string"
-				},
-				{
-					"name": "imagen",
-					"kind": "storage",
-					"scope": "public",
-					"type": "image"
-				},
-				{
-					"name": "razonSocial",
-					"kind": "calculated",
-					"scope": "public",
-					"type": "string",
-					"scriptKind": "javascript"
-				},
-				{
-					"name": "giro",
-					"kind": "calculated",
-					"scope": "public",
-					"type": "string",
-					"scriptKind": "javascript",
-					"autoComplete": true
-				},
-				{
-					"name": "isDocExtranjero",
-					"scope": "public"
-				},
-				{
-					"name": "direccion",
-					"scope": "public",
-					"type": "string",
-					"kind": "calculated",
-					"scriptKind": "javascript"
-				},
-				{
-					"name": "telefono",
-					"scope": "public",
-					"type": "string",
-					"kind": "calculated",
-					"scriptKind": "javascript",
-					"multiLine": true
-				},
-				{
-					"name": "entradaProveedorCollection",
-					"scope": "public",
-					"reversePath": true,
-					"path": "empresa",
-					"type": "EntradaProveedorCollection",
-					"kind": "relatedEntities"
-				}
-			]
-		},
-		{
-			"collectionName": "SistemaCollection",
-			"className": "Sistema",
-			"extends": "Empresa",
-			"attributes": [
-				{
-					"name": "domainName",
-					"scope": "public",
-					"type": "string",
-					"kind": "calculated",
-					"scriptKind": "javascript",
-					"not_null": true,
-					"unique": true,
-					"indexKind": "auto",
-					"pattern": "/^[0-9a-z\\.]$/"
-				},
-				{
-					"name": "fechaInicio",
-					"scope": "public",
-					"type": "date",
-					"kind": "calculated",
-					"scriptKind": "javascript"
-				},
-				{
-					"name": "fechaUltimaRenovacion",
-					"scope": "public",
-					"type": "date",
-					"kind": "calculated",
-					"scriptKind": "javascript"
-				},
-				{
-					"name": "periodoRenovacion",
-					"scope": "public",
-					"type": "duration",
-					"kind": "calculated",
-					"scriptKind": "javascript"
-				},
-				{
-					"name": "entradasDirectorio",
-					"scope": "public",
-					"reversePath": true,
-					"path": "sistema",
-					"type": "EntradaDirectorioCollection",
-					"kind": "relatedEntities"
-				},
-				{
-					"name": "isActivo",
-					"scope": "public",
-					"type": "bool",
-					"kind": "calculated",
-					"scriptKind": "javascript",
-					"not_null": true
-				},
-				{
-					"name": "direccion",
-					"scope": "public"
-				}
-			]
-		},
-		{
-			"collectionName": "EntradaDirectorioCollection",
-			"className": "EntradaDirectorio",
-			"attributes": [
-				{
-					"name": "UUID",
-					"scope": "public",
-					"type": "uuid",
-					"kind": "storage",
-					"primKey": "true",
-					"unique": "true"
-				},
-				{
-					"name": "sistema",
-					"scope": "public",
-					"path": "Sistema",
-					"type": "Sistema",
-					"kind": "relatedEntity"
-				},
-				{
-					"name": "alias",
-					"scope": "public",
-					"type": "string",
-					"kind": "storage",
-					"not_null": true,
-					"unique": false
-				}
-			],
-			"primKey": "UUID"
-		},
-		{
-			"collectionName": "EntradaEmpleadoCollection",
-			"className": "EntradaEmpleado",
-			"extends": "EntradaDirectorio",
-			"attributes": [
-				{
-					"name": "usuario",
-					"scope": "public",
-					"path": "usuario",
-					"type": "Usuario",
-					"kind": "relatedEntity"
-				},
-				{
-					"name": "email",
-					"scope": "public",
-					"type": "string",
-					"kind": "calculated",
-					"scriptKind": "javascript"
-				},
-				{
-					"name": "telefono",
-					"scope": "public",
-					"type": "string",
-					"kind": "calculated",
-					"scriptKind": "javascript"
-				}
-			]
-		},
-		{
-			"collectionName": "EntradaProveedorCollection",
-			"className": "EntradaProveedor",
-			"extends": "EntradaDirectorio",
-			"attributes": [
-				{
-					"name": "empresa",
-					"scope": "public",
-					"path": "Empresa",
-					"type": "Empresa",
-					"kind": "relatedEntity"
-				}
-			]
-		}
-	],
-	"type": []
-}
+﻿{	"toJSON": true,	"extraProperties": {		"version": "1",		"classes": {			"Contacto": {				"panelColor": "#CCC1D9",				"panel": {					"isOpen": "true",					"pathVisible": false,					"position": {						"X": 878,						"Y": 5					}				}			},			"Empresa": {				"panelColor": "#CCC1D9",				"panel": {					"isOpen": "true",					"pathVisible": false,					"position": {						"X": 877,						"Y": 250					}				}			},			"Persona": {				"panelColor": "#D7E3BC",				"panel": {					"isOpen": "true",					"pathVisible": true,					"position": {						"X": 1224,						"Y": 179					}				}			},			"Usuario": {				"panelColor": "#4FA997",				"panel": {					"isOpen": "true",					"pathVisible": false,					"position": {						"X": 1228,						"Y": 567					}				}			},			"Sistema": {				"panelColor": "#fff",				"panel": {					"isOpen": "true",					"pathVisible": false,					"position": {						"X": 878,						"Y": 645					}				}			},			"EntradaDirectorio": {				"panelColor": "#4FA997",				"panel": {					"isOpen": "true",					"position": {						"X": 313,						"Y": 27					}				}			},			"EntradaEmpleado": {				"panelColor": "#70CCC2",				"panel": {					"isOpen": "true",					"pathVisible": true,					"position": {						"X": 28,						"Y": 222					}				}			},			"EntradaProveedor": {				"panelColor": "#996699",				"panel": {					"isOpen": "true",					"pathVisible": true,					"position": {						"X": 264,						"Y": 219					}				}			},			"EntradaCliente": {				"panelColor": "#E5B9B7",				"panel": {					"isOpen": "true",					"position": {						"X": 520,						"Y": 219					},					"pathVisible": true				}			}		},		"model": {			"workspaceLeft": 463,			"workspaceTop": 0		}	},	"dataClasses": [		{			"name": "Contacto",			"className": "Contacto",			"collectionName": "ContactoCollection",			"scope": "public",			"attributes": [				{					"name": "UUID",					"kind": "storage",					"scope": "publicOnServer",					"unique": true,					"autosequence": true,					"autogenerate": true,					"type": "uuid",					"primKey": true				},				{					"name": "docIdentidad",					"kind": "storage",					"scope": "public",					"unique": true,					"type": "string",					"pattern": "/^[0-9A-Z\\-]$/",					"fixedLength": 16,					"events": [						{							"kind": "onValidate",							"from": "guidedModel.Contacto.docIdentidad.events.onValidate"						}					]				},				{					"name": "isDocExtranjero",					"kind": "storage",					"scope": "public",					"not_null": true,					"type": "bool"				},				{					"name": "imagen",					"kind": "storage",					"scope": "public",					"type": "image"				},				{					"name": "entradasDirectorio",					"kind": "relatedEntities",					"scope": "public",					"type": "EntradaDirectorioCollection",					"reversePath": true,					"path": "contacto"				},				{					"name": "entradaClienteCollection",					"scope": "public",					"reversePath": true,					"path": "contacto",					"type": "EntradaClienteCollection",					"kind": "relatedEntities"				},				{					"name": "entradaProveedorCollection",					"scope": "public",					"reversePath": true,					"path": "contacto",					"type": "EntradaProveedorCollection",					"kind": "relatedEntities"				}			]		},		{			"name": "Persona",			"className": "Persona",			"collectionName": "PersonaCollection",			"scope": "public",			"extends": "Contacto",			"attributes": [				{					"name": "UUID",					"kind": "storage",					"scope": "public",					"unique": true,					"autosequence": true,					"autogenerate": true,					"type": "uuid"				},				{					"name": "docIdentidad",					"kind": "storage",					"scope": "public",					"unique": true,					"not_null": true,					"type": "string"				},				{					"name": "isDocExtranjero",					"kind": "storage",					"scope": "public",					"not_null": true,					"type": "bool"				},				{					"name": "imagen",					"kind": "storage",					"scope": "public",					"type": "image"				},				{					"name": "apPat",					"kind": "calculated",					"scope": "public",					"type": "string",					"scriptKind": "javascript",					"autoComplete": true				},				{					"name": "apMat",					"kind": "calculated",					"scope": "public",					"type": "string",					"scriptKind": "javascript",					"autoComplete": true				},				{					"name": "nombres",					"kind": "calculated",					"scope": "public",					"type": "string",					"scriptKind": "javascript",					"autoComplete": true				}			]		},		{			"name": "Usuario",			"className": "Usuario",			"collectionName": "UsuarioCollection",			"scope": "public",			"extends": "Persona",			"attributes": [				{					"name": "UUID",					"kind": "storage",					"scope": "public",					"unique": true,					"autosequence": true,					"autogenerate": true,					"type": "uuid"				},				{					"name": "docIdentidad",					"kind": "storage",					"scope": "public",					"unique": true,					"not_null": true,					"type": "string"				},				{					"name": "isDocExtranjero",					"kind": "storage",					"scope": "public",					"not_null": true,					"type": "bool"				},				{					"name": "imagen",					"kind": "storage",					"scope": "public",					"type": "image"				},				{					"name": "entradasDirectorio",					"kind": "relatedEntities",					"scope": "public",					"type": "EntradaDirectorioCollection",					"path": "contacto"				},				{					"name": "apPat",					"kind": "calculated",					"scope": "public",					"type": "string",					"scriptKind": "javascript"				},				{					"name": "apMat",					"kind": "calculated",					"scope": "public",					"type": "string",					"scriptKind": "javascript"				},				{					"name": "userName",					"kind": "calculated",					"scope": "public",					"type": "string",					"indexKind": "auto",					"scriptKind": "javascript",					"pattern": "/^[a-z0-9\\.]$/"				},				{					"name": "password",					"kind": "calculated",					"scope": "public",					"type": "string",					"scriptKind": "javascript"				},				{					"name": "isActivo",					"kind": "calculated",					"scope": "public",					"type": "bool",					"scriptKind": "javascript"				},				{					"name": "entradaEmpleadoCollection",					"kind": "relatedEntities",					"scope": "public",					"type": "EntradaEmpleadoCollection",					"reversePath": true,					"path": "usuario"				}			]		},		{			"name": "Empresa",			"className": "Empresa",			"collectionName": "EmpresaCollection",			"scope": "public",			"extends": "Contacto",			"attributes": [				{					"name": "UUID",					"kind": "storage",					"scope": "public",					"unique": true,					"autosequence": true,					"autogenerate": true,					"type": "uuid"				},				{					"name": "docIdentidad",					"kind": "storage",					"scope": "public",					"unique": true,					"not_null": true,					"type": "string"				},				{					"name": "isDocExtranjero",					"kind": "storage",					"scope": "public",					"not_null": true,					"type": "bool"				},				{					"name": "imagen",					"kind": "storage",					"scope": "public",					"type": "image"				},				{					"name": "razonSocial",					"kind": "calculated",					"scope": "public",					"type": "string",					"scriptKind": "javascript"				},				{					"name": "giro",					"kind": "calculated",					"scope": "public",					"type": "string",					"scriptKind": "javascript",					"autoComplete": true				},				{					"name": "direccion",					"kind": "calculated",					"scope": "public",					"type": "string",					"scriptKind": "javascript"				},				{					"name": "telefono",					"kind": "calculated",					"scope": "public",					"type": "string",					"scriptKind": "javascript",					"multiLine": true				}			]		},		{			"name": "Sistema",			"className": "Sistema",			"collectionName": "SistemaCollection",			"scope": "public",			"extends": "Empresa",			"attributes": [				{					"name": "entradasDirectorio",					"kind": "relatedEntities",					"scope": "public",					"type": "EntradaDirectorioCollection",					"reversePath": true,					"path": "sistema"				},				{					"name": "direccion",					"kind": "calculated",					"scope": "public",					"type": "string",					"scriptKind": "javascript"				},				{					"name": "domainName",					"kind": "calculated",					"scope": "public",					"type": "string",					"indexKind": "auto",					"scriptKind": "javascript",					"pattern": "/^[0-9a-z\\.]$/"				},				{					"name": "fechaInicio",					"kind": "calculated",					"scope": "public",					"type": "date",					"simpleDate": false,					"scriptKind": "javascript"				},				{					"name": "fechaUltimaRenovacion",					"kind": "calculated",					"scope": "public",					"type": "date",					"simpleDate": false,					"scriptKind": "javascript"				},				{					"name": "periodoRenovacion",					"kind": "calculated",					"scope": "public",					"type": "duration",					"scriptKind": "javascript"				},				{					"name": "isActivo",					"kind": "calculated",					"scope": "public",					"type": "bool",					"scriptKind": "javascript"				}			]		},		{			"name": "EntradaDirectorio",			"className": "EntradaDirectorio",			"collectionName": "EntradaDirectorioCollection",			"scope": "public",			"attributes": [				{					"name": "UUID",					"kind": "storage",					"scope": "public",					"unique": true,					"type": "uuid",					"primKey": true				},				{					"name": "sistema",					"kind": "relatedEntity",					"scope": "public",					"type": "Sistema",					"path": "Sistema"				},				{					"name": "alias",					"kind": "storage",					"scope": "public",					"not_null": true,					"type": "string"				}			]		},		{			"name": "EntradaEmpleado",			"className": "EntradaEmpleado",			"collectionName": "EntradaEmpleadoCollection",			"scope": "public",			"extends": "EntradaDirectorio",			"attributes": [				{					"name": "usuario",					"kind": "relatedEntity",					"scope": "public",					"type": "Usuario",					"path": "usuario"				},				{					"name": "email",					"kind": "calculated",					"scope": "public",					"type": "string",					"scriptKind": "javascript"				},				{					"name": "telefono",					"kind": "calculated",					"scope": "public",					"type": "string",					"scriptKind": "javascript"				},				{					"name": "tipoRelacion",					"scope": "public",					"type": "string",					"kind": "calculated",					"scriptKind": "javascript"				}			]		},		{			"name": "EntradaProveedor",			"className": "EntradaProveedor",			"collectionName": "EntradaProveedorCollection",			"scope": "public",			"extends": "EntradaDirectorio",			"attributes": [				{					"name": "contacto",					"scope": "public",					"path": "Contacto",					"type": "Contacto",					"kind": "relatedEntity"				}			]		},		{			"collectionName": "EntradaClienteCollection",			"className": "EntradaCliente",			"extends": "EntradaDirectorio",			"attributes": [				{					"name": "contacto",					"scope": "public",					"path": "Contacto",					"type": "Contacto",					"kind": "relatedEntity"				}			]		}	],	"type": []}
