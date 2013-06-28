@@ -7,10 +7,10 @@
 				"panelColor": "#CCC1D9",
 				"panel": {
 					"isOpen": "true",
-					"pathVisible": false,
+					"pathVisible": true,
 					"position": {
-						"X": 878,
-						"Y": 5
+						"X": 1258,
+						"Y": 13
 					}
 				}
 			},
@@ -20,8 +20,8 @@
 					"isOpen": "true",
 					"pathVisible": false,
 					"position": {
-						"X": 887,
-						"Y": 288
+						"X": 1526,
+						"Y": 627
 					}
 				}
 			},
@@ -31,8 +31,8 @@
 					"isOpen": "true",
 					"pathVisible": false,
 					"position": {
-						"X": 1247,
-						"Y": 152
+						"X": 1253,
+						"Y": 626
 					}
 				}
 			},
@@ -42,8 +42,8 @@
 					"isOpen": "true",
 					"pathVisible": false,
 					"position": {
-						"X": 1228,
-						"Y": 567
+						"X": 1232,
+						"Y": 1246
 					}
 				}
 			},
@@ -53,8 +53,8 @@
 					"isOpen": "true",
 					"pathVisible": false,
 					"position": {
-						"X": 888,
-						"Y": 693
+						"X": 1528,
+						"Y": 1282
 					}
 				}
 			},
@@ -62,11 +62,11 @@
 				"panelColor": "#4FA997",
 				"panel": {
 					"isOpen": "true",
+					"pathVisible": true,
 					"position": {
-						"X": 313,
-						"Y": 27
-					},
-					"pathVisible": true
+						"X": 289,
+						"Y": 30
+					}
 				}
 			},
 			"EntradaEmpleado": {
@@ -75,36 +75,36 @@
 					"isOpen": "true",
 					"pathVisible": false,
 					"position": {
-						"X": 334,
-						"Y": 224
+						"X": 78,
+						"Y": 338
 					}
 				}
 			},
 			"EntradaProveedor": {
 				"panelColor": "#996699",
 				"panel": {
-					"isOpen": "false",
+					"isOpen": "true",
 					"pathVisible": false,
 					"position": {
-						"X": 264,
-						"Y": 219
+						"X": 291,
+						"Y": 350
 					}
 				}
 			},
 			"EntradaCliente": {
-				"panelColor": "#E5B9B7",
+				"panelColor": "#B2A2C7",
 				"panel": {
-					"isOpen": "false",
+					"isOpen": "true",
 					"pathVisible": false,
 					"position": {
-						"X": 502,
-						"Y": 225
+						"X": 529,
+						"Y": 358
 					}
 				}
 			}
 		},
 		"model": {
-			"workspaceLeft": 0,
+			"workspaceLeft": 193,
 			"workspaceTop": 0
 		}
 	},
@@ -118,7 +118,7 @@
 				{
 					"name": "UUID",
 					"kind": "storage",
-					"scope": "publicOnServer",
+					"scope": "public",
 					"unique": true,
 					"autosequence": true,
 					"autogenerate": true,
@@ -131,8 +131,6 @@
 					"scope": "public",
 					"unique": true,
 					"type": "string",
-					"pattern": "/^[0-9A-Z\\-]$/",
-					"fixedLength": 16,
 					"events": [
 						{
 							"kind": "onValidate",
@@ -144,7 +142,6 @@
 					"name": "isDocExtranjero",
 					"kind": "storage",
 					"scope": "public",
-					"not_null": true,
 					"type": "bool"
 				},
 				{
@@ -155,11 +152,89 @@
 				},
 				{
 					"name": "entradaDirectorioCollection",
+					"kind": "relatedEntities",
 					"scope": "public",
-					"reversePath": true,
-					"path": "contacto",
 					"type": "EntradaDirectorioCollection",
-					"kind": "relatedEntities"
+					"reversePath": true,
+					"path": "contacto"
+				},
+				{
+					"name": "apPat",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "apMat",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "nombres",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "razonSocial",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "giro",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "userName",
+					"kind": "storage",
+					"scope": "private",
+					"type": "string"
+				},
+				{
+					"name": "password",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "domainName",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "isActivo",
+					"kind": "storage",
+					"scope": "public",
+					"type": "bool"
+				},
+				{
+					"name": "isPersona",
+					"kind": "storage",
+					"scope": "public",
+					"type": "bool"
+				},
+				{
+					"name": "isEmpresa",
+					"kind": "storage",
+					"scope": "public",
+					"type": "bool"
+				},
+				{
+					"name": "isUsuario",
+					"kind": "storage",
+					"scope": "public",
+					"type": "bool"
+				},
+				{
+					"name": "isSistema",
+					"kind": "storage",
+					"scope": "public",
+					"type": "bool"
 				}
 			]
 		},
@@ -169,6 +244,11 @@
 			"collectionName": "PersonaCollection",
 			"scope": "public",
 			"extends": "Contacto",
+			"restrictingQuery": [
+				{
+					"queryStatement": "isPersona == true"
+				}
+			],
 			"attributes": [
 				{
 					"name": "UUID",
@@ -201,28 +281,10 @@
 					"type": "image"
 				},
 				{
-					"name": "apPat",
-					"kind": "calculated",
+					"name": "userName",
+					"kind": "storage",
 					"scope": "public",
-					"type": "string",
-					"scriptKind": "javascript",
-					"autoComplete": true
-				},
-				{
-					"name": "apMat",
-					"kind": "calculated",
-					"scope": "public",
-					"type": "string",
-					"scriptKind": "javascript",
-					"autoComplete": true
-				},
-				{
-					"name": "nombres",
-					"kind": "calculated",
-					"scope": "public",
-					"type": "string",
-					"scriptKind": "javascript",
-					"autoComplete": true
+					"type": "string"
 				}
 			]
 		},
@@ -232,6 +294,11 @@
 			"collectionName": "UsuarioCollection",
 			"scope": "public",
 			"extends": "Persona",
+			"restrictingQuery": [
+				{
+					"queryStatement": "isUsuario == true"
+				}
+			],
 			"attributes": [
 				{
 					"name": "UUID",
@@ -264,41 +331,10 @@
 					"type": "image"
 				},
 				{
-					"name": "apPat",
-					"kind": "calculated",
-					"scope": "public",
-					"type": "string",
-					"scriptKind": "javascript"
-				},
-				{
-					"name": "apMat",
-					"kind": "calculated",
-					"scope": "public",
-					"type": "string",
-					"scriptKind": "javascript"
-				},
-				{
 					"name": "userName",
-					"kind": "calculated",
+					"kind": "storage",
 					"scope": "public",
-					"type": "string",
-					"indexKind": "auto",
-					"scriptKind": "javascript",
-					"pattern": "/^[a-z0-9\\.]$/"
-				},
-				{
-					"name": "password",
-					"kind": "calculated",
-					"scope": "public",
-					"type": "string",
-					"scriptKind": "javascript"
-				},
-				{
-					"name": "isActivo",
-					"kind": "calculated",
-					"scope": "public",
-					"type": "bool",
-					"scriptKind": "javascript"
+					"type": "string"
 				}
 			]
 		},
@@ -308,6 +344,11 @@
 			"collectionName": "EmpresaCollection",
 			"scope": "public",
 			"extends": "Contacto",
+			"restrictingQuery": [
+				{
+					"queryStatement": "isEmpresa == true"
+				}
+			],
 			"attributes": [
 				{
 					"name": "UUID",
@@ -340,34 +381,10 @@
 					"type": "image"
 				},
 				{
-					"name": "razonSocial",
-					"kind": "calculated",
+					"name": "userName",
+					"kind": "storage",
 					"scope": "public",
-					"type": "string",
-					"scriptKind": "javascript"
-				},
-				{
-					"name": "giro",
-					"kind": "calculated",
-					"scope": "public",
-					"type": "string",
-					"scriptKind": "javascript",
-					"autoComplete": true
-				},
-				{
-					"name": "direccion",
-					"kind": "calculated",
-					"scope": "public",
-					"type": "string",
-					"scriptKind": "javascript"
-				},
-				{
-					"name": "telefono",
-					"kind": "calculated",
-					"scope": "public",
-					"type": "string",
-					"scriptKind": "javascript",
-					"multiLine": true
+					"type": "string"
 				}
 			]
 		},
@@ -377,52 +394,17 @@
 			"collectionName": "SistemaCollection",
 			"scope": "public",
 			"extends": "Empresa",
+			"restrictingQuery": [
+				{
+					"queryStatement": "isSistema == true"
+				}
+			],
 			"attributes": [
 				{
-					"name": "direccion",
-					"kind": "calculated",
+					"name": "userName",
+					"kind": "storage",
 					"scope": "public",
-					"type": "string",
-					"scriptKind": "javascript"
-				},
-				{
-					"name": "domainName",
-					"kind": "calculated",
-					"scope": "public",
-					"type": "string",
-					"indexKind": "auto",
-					"scriptKind": "javascript",
-					"pattern": "/^[0-9a-z\\.]$/"
-				},
-				{
-					"name": "fechaInicio",
-					"kind": "calculated",
-					"scope": "public",
-					"type": "date",
-					"simpleDate": false,
-					"scriptKind": "javascript"
-				},
-				{
-					"name": "fechaUltimaRenovacion",
-					"kind": "calculated",
-					"scope": "public",
-					"type": "date",
-					"simpleDate": false,
-					"scriptKind": "javascript"
-				},
-				{
-					"name": "periodoRenovacion",
-					"kind": "calculated",
-					"scope": "public",
-					"type": "duration",
-					"scriptKind": "javascript"
-				},
-				{
-					"name": "isActivo",
-					"kind": "calculated",
-					"scope": "public",
-					"type": "bool",
-					"scriptKind": "javascript"
+					"type": "string"
 				}
 			]
 		},
@@ -456,10 +438,40 @@
 				},
 				{
 					"name": "contacto",
+					"kind": "relatedEntity",
 					"scope": "public",
-					"path": "Contacto",
 					"type": "Contacto",
-					"kind": "relatedEntity"
+					"path": "Contacto"
+				},
+				{
+					"name": "direccion",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "telefono",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "isEmpleado",
+					"kind": "storage",
+					"scope": "public",
+					"type": "bool"
+				},
+				{
+					"name": "isProveedor",
+					"kind": "storage",
+					"scope": "public",
+					"type": "bool"
+				},
+				{
+					"name": "isCliente",
+					"kind": "storage",
+					"scope": "public",
+					"type": "bool"
 				}
 			]
 		},
@@ -469,27 +481,9 @@
 			"collectionName": "EntradaEmpleadoCollection",
 			"scope": "public",
 			"extends": "EntradaDirectorio",
-			"attributes": [
+			"restrictingQuery": [
 				{
-					"name": "email",
-					"kind": "calculated",
-					"scope": "public",
-					"type": "string",
-					"scriptKind": "javascript"
-				},
-				{
-					"name": "telefono",
-					"kind": "calculated",
-					"scope": "public",
-					"type": "string",
-					"scriptKind": "javascript"
-				},
-				{
-					"name": "tipoRelacion",
-					"kind": "calculated",
-					"scope": "public",
-					"type": "string",
-					"scriptKind": "javascript"
+					"queryStatement": "isEmpleado == true"
 				}
 			]
 		},
@@ -499,15 +493,23 @@
 			"collectionName": "EntradaProveedorCollection",
 			"scope": "public",
 			"extends": "EntradaDirectorio",
-			"attributes": []
+			"restrictingQuery": [
+				{
+					"queryStatement": "isProveedor == true"
+				}
+			]
 		},
 		{
-			"name": "EntradaCliente",
+			"name": "EntradaEmpleadoProveedor",
 			"className": "EntradaCliente",
 			"collectionName": "EntradaClienteCollection",
 			"scope": "public",
 			"extends": "EntradaDirectorio",
-			"attributes": []
+			"restrictingQuery": [
+				{
+					"queryStatement": "isCliente == true"
+				}
+			]
 		}
 	]
 }

@@ -3,11 +3,21 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
+#dataGrid3 {
+	 width: 714px;
+	 height: 300px;
+	 top: 399px;
+	 left: 43px;
+	
+	 position: absolute;
+	 
+}
+
 #autoFormSistema {
-	 width: 662px;
-	 height: 497px;
+	 width: 620px;
+	 height: 354px;
 	 top: 15px;
-	 left: 6px;
+	 left: 15px;
 	
 	 position: absolute;
 	 

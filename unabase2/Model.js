@@ -9,11 +9,11 @@ guidedModel =// @startlock
 			{
 				onValidate:function(attributeName)
 				{// @endlock
-					switch(attributeName) {
+					/*switch(attributeName) {
 						case "docIdentidad":
 							this[attributeName].lpad("\0", 16);
 						break;
-					}
+					}*/
 				}// @startlock
 			}
 		}
