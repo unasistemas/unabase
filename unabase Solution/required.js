@@ -28,9 +28,9 @@ function myLoginListener(userName, password) {
 };
 
 
-String.prototype.lpad = function(padChar, length) {
+/*String.prototype.lpad = function(padChar, length) {
 	var str = this;
 	while (str.length < length)
 		str = padChar + str;
 	return str;
-};
+};*/
