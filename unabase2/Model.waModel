@@ -36,36 +36,14 @@
 					}
 				}
 			},
-			"Usuario": {
-				"panelColor": "#4FA997",
-				"panel": {
-					"isOpen": "true",
-					"pathVisible": false,
-					"position": {
-						"X": 1232,
-						"Y": 1246
-					}
-				}
-			},
-			"Sistema": {
-				"panelColor": "#fff",
-				"panel": {
-					"isOpen": "true",
-					"pathVisible": false,
-					"position": {
-						"X": 1528,
-						"Y": 1282
-					}
-				}
-			},
 			"EntradaDirectorio": {
 				"panelColor": "#4FA997",
 				"panel": {
 					"isOpen": "true",
 					"pathVisible": true,
 					"position": {
-						"X": 289,
-						"Y": 30
+						"X": 186,
+						"Y": 5
 					}
 				}
 			},
@@ -75,8 +53,8 @@
 					"isOpen": "true",
 					"pathVisible": false,
 					"position": {
-						"X": 78,
-						"Y": 338
+						"X": 73,
+						"Y": 359
 					}
 				}
 			},
@@ -84,7 +62,7 @@
 				"panelColor": "#996699",
 				"panel": {
 					"isOpen": "true",
-					"pathVisible": false,
+					"pathVisible": true,
 					"position": {
 						"X": 291,
 						"Y": 350
@@ -101,11 +79,33 @@
 						"Y": 358
 					}
 				}
+			},
+			"Usuario": {
+				"panelColor": "#76923C",
+				"panel": {
+					"isOpen": "true",
+					"pathVisible": false,
+					"position": {
+						"X": 1261,
+						"Y": 1204
+					}
+				}
+			},
+			"Sistema": {
+				"panelColor": "#eee",
+				"panel": {
+					"isOpen": "true",
+					"pathVisible": true,
+					"position": {
+						"X": 1555,
+						"Y": 1204
+					}
+				}
 			}
 		},
 		"model": {
-			"workspaceLeft": 160,
-			"workspaceTop": 700
+			"workspaceLeft": 927,
+			"workspaceTop": 0
 		}
 	},
 	"dataClasses": [
@@ -151,14 +151,6 @@
 					"type": "image"
 				},
 				{
-					"name": "entradaDirectorioCollection",
-					"kind": "relatedEntities",
-					"scope": "public",
-					"type": "EntradaDirectorioCollection",
-					"reversePath": true,
-					"path": "contacto"
-				},
-				{
 					"name": "apPat",
 					"kind": "storage",
 					"scope": "public",
@@ -186,12 +178,13 @@
 					"name": "giro",
 					"kind": "storage",
 					"scope": "public",
-					"type": "string"
+					"type": "string",
+					"autoComplete": true
 				},
 				{
 					"name": "userName",
 					"kind": "storage",
-					"scope": "private",
+					"scope": "public",
 					"type": "string"
 				},
 				{
@@ -286,55 +279,11 @@
 					"scope": "public",
 					"type": "string"
 				}
-			]
-		},
-		{
-			"name": "Usuario",
-			"className": "Usuario",
-			"collectionName": "UsuarioCollection",
-			"scope": "public",
-			"extends": "Persona",
-			"restrictingQuery": [
-				{
-					"queryStatement": "isUsuario == true"
-				}
 			],
-			"attributes": [
+			"events": [
 				{
-					"name": "UUID",
-					"kind": "storage",
-					"scope": "public",
-					"unique": true,
-					"autosequence": true,
-					"autogenerate": true,
-					"type": "uuid"
-				},
-				{
-					"name": "docIdentidad",
-					"kind": "storage",
-					"scope": "public",
-					"unique": true,
-					"not_null": true,
-					"type": "string"
-				},
-				{
-					"name": "isDocExtranjero",
-					"kind": "storage",
-					"scope": "public",
-					"not_null": true,
-					"type": "bool"
-				},
-				{
-					"name": "imagen",
-					"kind": "storage",
-					"scope": "public",
-					"type": "image"
-				},
-				{
-					"name": "userName",
-					"kind": "storage",
-					"scope": "public",
-					"type": "string"
+					"kind": "onValidate",
+					"from": "guidedModel.Persona.events.onValidate"
 				}
 			]
 		},
@@ -383,7 +332,32 @@
 				{
 					"name": "userName",
 					"kind": "storage",
+					"scope": "public",
 					"type": "string"
+				}
+			],
+			"events": [
+				{
+					"kind": "onValidate",
+					"from": "guidedModel.Empresa.events.onValidate"
+				}
+			]
+		},
+		{
+			"name": "Usuario",
+			"className": "Usuario",
+			"collectionName": "UsuarioCollection",
+			"scope": "public",
+			"extends": "Contacto",
+			"restrictingQuery": [
+				{
+					"queryStatement": "isUsuario == true"
+				}
+			],
+			"events": [
+				{
+					"kind": "onValidate",
+					"from": "guidedModel.Usuario.events.onValidate"
 				}
 			]
 		},
@@ -392,7 +366,7 @@
 			"className": "Sistema",
 			"collectionName": "SistemaCollection",
 			"scope": "public",
-			"extends": "Empresa",
+			"extends": "Contacto",
 			"restrictingQuery": [
 				{
 					"queryStatement": "isSistema == true"
@@ -400,10 +374,18 @@
 			],
 			"attributes": [
 				{
-					"name": "userName",
-					"kind": "storage",
+					"name": "entradaDirectorioCollection",
+					"kind": "relatedEntities",
 					"scope": "public",
-					"type": "string"
+					"type": "EntradaDirectorioCollection",
+					"reversePath": true,
+					"path": "sistema"
+				}
+			],
+			"events": [
+				{
+					"kind": "onValidate",
+					"from": "guidedModel.Sistema.events.onValidate"
 				}
 			]
 		},
@@ -429,18 +411,18 @@
 					"path": "Sistema"
 				},
 				{
-					"name": "alias",
-					"kind": "storage",
-					"scope": "public",
-					"not_null": true,
-					"type": "string"
-				},
-				{
 					"name": "contacto",
 					"kind": "relatedEntity",
 					"scope": "public",
 					"type": "Contacto",
 					"path": "Contacto"
+				},
+				{
+					"name": "alias",
+					"kind": "storage",
+					"scope": "public",
+					"not_null": true,
+					"type": "string"
 				},
 				{
 					"name": "direccion",
@@ -450,6 +432,12 @@
 				},
 				{
 					"name": "telefono",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "cargo",
 					"kind": "storage",
 					"scope": "public",
 					"type": "string"
@@ -484,6 +472,12 @@
 				{
 					"queryStatement": "isEmpleado == true"
 				}
+			],
+			"events": [
+				{
+					"kind": "onValidate",
+					"from": "guidedModel.EntradaEmpleado.events.onValidate"
+				}
 			]
 		},
 		{
@@ -496,10 +490,16 @@
 				{
 					"queryStatement": "isProveedor == true"
 				}
+			],
+			"events": [
+				{
+					"kind": "onValidate",
+					"from": "guidedModel.EntradaProveedor.events.onValidate"
+				}
 			]
 		},
 		{
-			"name": "EntradaEmpleadoProveedor",
+			"name": "EntradaCliente",
 			"className": "EntradaCliente",
 			"collectionName": "EntradaClienteCollection",
 			"scope": "public",
@@ -507,6 +507,12 @@
 			"restrictingQuery": [
 				{
 					"queryStatement": "isCliente == true"
+				}
+			],
+			"events": [
+				{
+					"kind": "onValidate",
+					"from": "guidedModel.EntradaCliente.events.onValidate"
 				}
 			]
 		}
