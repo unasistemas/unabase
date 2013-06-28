@@ -15,9 +15,15 @@ guidedModel =// @startlock
 	{
 		events :
 		{
+			onRemove:function()
+			{// @endlock
+				this.isSistema = false;
+				return ds.Sistema.all();
+			},// @startlock
 			onValidate:function()
 			{// @endlock
 				this.isSistema = true;
+				this.isEmpresa = true;
 			}// @startlock
 		}
 	},
@@ -38,6 +44,7 @@ guidedModel =// @startlock
 			onValidate:function()
 			{// @endlock
 				this.isEmpleado = true;
+				this.isPersona = true;
 			}// @startlock
 		}
 	},

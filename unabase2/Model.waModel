@@ -104,8 +104,8 @@
 			}
 		},
 		"model": {
-			"workspaceLeft": 927,
-			"workspaceTop": 0
+			"workspaceLeft": 1344,
+			"workspaceTop": 1100
 		}
 	},
 	"dataClasses": [
@@ -386,6 +386,10 @@
 				{
 					"kind": "onValidate",
 					"from": "guidedModel.Sistema.events.onValidate"
+				},
+				{
+					"from": "guidedModel.Sistema.events.onRemove",
+					"kind": "onRemove"
 				}
 			]
 		},
@@ -516,6 +520,5 @@
 				}
 			]
 		}
-	],
-	"type": []
+	]
 }
