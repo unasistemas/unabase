@@ -1,541 +1,1 @@
-﻿{
-	"toJSON": true,
-	"extraProperties": {
-		"version": "1",
-		"classes": {
-			"Empresa": {
-				"panelColor": "#70CCC2",
-				"panel": {
-					"isOpen": "true",
-					"pathVisible": true,
-					"position": {
-						"X": 40,
-						"Y": 10
-					}
-				}
-			},
-			"Contacto": {
-				"panelColor": "#D7E3BC",
-				"panel": {
-					"isOpen": "true",
-					"pathVisible": true,
-					"position": {
-						"X": 1397,
-						"Y": 37
-					}
-				}
-			},
-			"Proyecto": {
-				"panelColor": "#8DB3E2",
-				"panel": {
-					"isOpen": "true",
-					"pathVisible": true,
-					"position": {
-						"X": 32,
-						"Y": 374
-					}
-				}
-			},
-			"Usuario": {
-				"panelColor": "#B8CCE4",
-				"panel": {
-					"isOpen": "true",
-					"position": {
-						"X": 681,
-						"Y": 469
-					}
-				}
-			},
-			"Cotizacion": {
-				"panelColor": "#70CCC2",
-				"panel": {
-					"isOpen": "true",
-					"pathVisible": true,
-					"position": {
-						"X": 32,
-						"Y": 647
-					}
-				}
-			},
-			"Item": {
-				"panelColor": "#E5B9B7",
-				"panel": {
-					"isOpen": "true",
-					"pathVisible": true,
-					"position": {
-						"X": 505,
-						"Y": 670
-					}
-				}
-			},
-			"CategoriaItem": {
-				"panelColor": "#eee",
-				"panel": {
-					"isOpen": "true",
-					"pathVisible": true,
-					"position": {
-						"X": 303,
-						"Y": 854
-					}
-				}
-			},
-			"DetalleCotizacion": {
-				"panelColor": "#BFBFBF",
-				"panel": {
-					"isOpen": "true",
-					"pathVisible": true,
-					"position": {
-						"X": 17,
-						"Y": 886
-					}
-				}
-			}
-		},
-		"model": {
-			"workspaceLeft": 1465,
-			"workspaceTop": 0
-		}
-	},
-	"dataClasses": [
-		{
-			"name": "CategoriaItem",
-			"className": "CategoriaItem",
-			"collectionName": "CategoriaItemCollection",
-			"scope": "public",
-			"attributes": [
-				{
-					"name": "ID",
-					"kind": "storage",
-					"scope": "public",
-					"unique": true,
-					"autosequence": true,
-					"type": "long",
-					"primKey": true
-				},
-				{
-					"name": "nombre",
-					"kind": "storage",
-					"scope": "public",
-					"type": "string"
-				},
-				{
-					"name": "empresa",
-					"kind": "relatedEntity",
-					"scope": "public",
-					"type": "Empresa",
-					"path": "Empresa"
-				},
-				{
-					"name": "itemCollection",
-					"kind": "relatedEntities",
-					"scope": "public",
-					"type": "ItemCollection",
-					"reversePath": true,
-					"path": "categoria"
-				},
-				{
-					"name": "detalleCotizacionCollection",
-					"kind": "relatedEntities",
-					"scope": "public",
-					"type": "DetalleCotizacionCollection",
-					"reversePath": true,
-					"path": "categoria"
-				}
-			]
-		},
-		{
-			"name": "Contacto",
-			"className": "Contacto",
-			"collectionName": "ContactoCollection",
-			"scope": "public",
-			"attributes": [
-				{
-					"name": "ID",
-					"kind": "storage",
-					"scope": "public",
-					"unique": true,
-					"autosequence": true,
-					"type": "long",
-					"primKey": true
-				},
-				{
-					"name": "email",
-					"kind": "storage",
-					"scope": "public",
-					"unique": true,
-					"type": "string",
-					"autoComplete": false
-				},
-				{
-					"name": "apPat",
-					"kind": "storage",
-					"scope": "public",
-					"type": "string"
-				},
-				{
-					"name": "apMat",
-					"kind": "storage",
-					"scope": "public",
-					"type": "string"
-				},
-				{
-					"name": "nombres",
-					"kind": "storage",
-					"scope": "public",
-					"type": "string"
-				},
-				{
-					"name": "telefono",
-					"kind": "storage",
-					"scope": "public",
-					"type": "string"
-				},
-				{
-					"name": "usuarioCollection",
-					"kind": "relatedEntities",
-					"scope": "public",
-					"type": "UsuarioCollection",
-					"reversePath": true,
-					"path": "contacto"
-				},
-				{
-					"name": "proyectoCollection",
-					"kind": "relatedEntities",
-					"scope": "public",
-					"type": "ProyectoCollection",
-					"reversePath": true,
-					"path": "cliente"
-				},
-				{
-					"name": "empresa",
-					"kind": "relatedEntity",
-					"scope": "public",
-					"type": "Empresa",
-					"path": "Empresa"
-				},
-				{
-					"name": "nombreCompleto",
-					"scope": "public",
-					"type": "string",
-					"kind": "calculated",
-					"scriptKind": "javascript",
-					"onGet": [
-						{
-							"from": "guidedModel.Contacto.nombreCompleto.onGet"
-						}
-					]
-				}
-			]
-		},
-		{
-			"name": "Cotizacion",
-			"className": "Cotizacion",
-			"collectionName": "CotizacionCollection",
-			"scope": "public",
-			"attributes": [
-				{
-					"name": "ID",
-					"kind": "storage",
-					"scope": "public",
-					"unique": true,
-					"autosequence": true,
-					"type": "long",
-					"primKey": true
-				},
-				{
-					"name": "proyecto",
-					"kind": "relatedEntity",
-					"scope": "public",
-					"type": "Proyecto",
-					"path": "Proyecto"
-				},
-				{
-					"name": "detalleCotizacionCollection",
-					"kind": "relatedEntities",
-					"scope": "public",
-					"type": "DetalleCotizacionCollection",
-					"reversePath": true,
-					"path": "cotizacion"
-				},
-				{
-					"name": "proyectoCollection",
-					"kind": "relatedEntities",
-					"scope": "public",
-					"type": "ProyectoCollection",
-					"reversePath": true,
-					"path": "cotizacion"
-				},
-				{
-					"name": "modificado",
-					"kind": "storage",
-					"scope": "public",
-					"type": "date",
-					"simpleDate": false
-				},
-				{
-					"name": "totalNeto",
-					"kind": "calculated",
-					"scope": "public",
-					"type": "number",
-					"scriptKind": "javascript"
-				}
-			]
-		},
-		{
-			"name": "DetalleCotizacion",
-			"className": "DetalleCotizacion",
-			"collectionName": "DetalleCotizacionCollection",
-			"scope": "public",
-			"attributes": [
-				{
-					"name": "ID",
-					"kind": "storage",
-					"scope": "public",
-					"unique": true,
-					"autosequence": true,
-					"type": "long",
-					"primKey": true
-				},
-				{
-					"name": "cotizacion",
-					"kind": "relatedEntity",
-					"scope": "public",
-					"type": "Cotizacion",
-					"path": "Cotizacion"
-				},
-				{
-					"name": "item",
-					"kind": "relatedEntity",
-					"scope": "public",
-					"type": "Item",
-					"path": "Item"
-				},
-				{
-					"name": "categoria",
-					"kind": "relatedEntity",
-					"scope": "public",
-					"type": "CategoriaItem",
-					"path": "CategoriaItem"
-				},
-				{
-					"name": "cantidad",
-					"kind": "storage",
-					"scope": "public",
-					"type": "number"
-				},
-				{
-					"name": "precioUnitario",
-					"kind": "storage",
-					"scope": "public",
-					"type": "number"
-				},
-				{
-					"name": "factor",
-					"kind": "storage",
-					"scope": "public",
-					"type": "number"
-				}
-			]
-		},
-		{
-			"name": "Empresa",
-			"className": "Empresa",
-			"collectionName": "EmpresaCollection",
-			"scope": "public",
-			"attributes": [
-				{
-					"name": "RUT",
-					"kind": "storage",
-					"scope": "public",
-					"unique": true,
-					"type": "long",
-					"primKey": true
-				},
-				{
-					"name": "razonSocial",
-					"kind": "storage",
-					"scope": "public",
-					"unique": true,
-					"type": "string"
-				},
-				{
-					"name": "alias",
-					"kind": "storage",
-					"scope": "public",
-					"unique": true,
-					"type": "string"
-				},
-				{
-					"name": "direccion",
-					"kind": "storage",
-					"scope": "public",
-					"type": "string"
-				},
-				{
-					"name": "url",
-					"kind": "storage",
-					"scope": "public",
-					"type": "string"
-				},
-				{
-					"name": "email",
-					"kind": "storage",
-					"scope": "public",
-					"type": "string"
-				},
-				{
-					"name": "telefono",
-					"kind": "storage",
-					"scope": "public",
-					"type": "string"
-				},
-				{
-					"name": "categoriaItemCollection",
-					"kind": "relatedEntities",
-					"scope": "public",
-					"type": "CategoriaItemCollection",
-					"reversePath": true,
-					"path": "empresa"
-				},
-				{
-					"name": "contactoCollection",
-					"kind": "relatedEntities",
-					"scope": "public",
-					"type": "ContactoCollection",
-					"reversePath": true,
-					"path": "empresa"
-				}
-			]
-		},
-		{
-			"name": "Item",
-			"className": "Item",
-			"collectionName": "ItemCollection",
-			"scope": "public",
-			"attributes": [
-				{
-					"name": "ID",
-					"kind": "storage",
-					"scope": "public",
-					"unique": true,
-					"autosequence": true,
-					"type": "long",
-					"primKey": true
-				},
-				{
-					"name": "categoria",
-					"kind": "relatedEntity",
-					"scope": "public",
-					"type": "CategoriaItem",
-					"path": "CategoriaItem"
-				},
-				{
-					"name": "detalleCotizacionCollection",
-					"kind": "relatedEntities",
-					"scope": "public",
-					"type": "DetalleCotizacionCollection",
-					"reversePath": true,
-					"path": "item"
-				}
-			]
-		},
-		{
-			"name": "Proyecto",
-			"className": "Proyecto",
-			"collectionName": "ProyectoCollection",
-			"scope": "public",
-			"publishAsJSGlobal": false,
-			"attributes": [
-				{
-					"name": "ID",
-					"kind": "storage",
-					"scope": "public",
-					"unique": true,
-					"autosequence": true,
-					"type": "long",
-					"primKey": true
-				},
-				{
-					"name": "referencia",
-					"kind": "storage",
-					"scope": "public",
-					"type": "string"
-				},
-				{
-					"name": "creador",
-					"kind": "relatedEntity",
-					"scope": "public",
-					"type": "Usuario",
-					"path": "Usuario"
-				},
-				{
-					"name": "cliente",
-					"kind": "relatedEntity",
-					"scope": "public",
-					"type": "Contacto",
-					"path": "Contacto"
-				},
-				{
-					"name": "cotizacion",
-					"kind": "relatedEntity",
-					"scope": "public",
-					"type": "Cotizacion",
-					"path": "Cotizacion"
-				},
-				{
-					"name": "isNegocio",
-					"kind": "calculated",
-					"scope": "public",
-					"type": "bool",
-					"scriptKind": "javascript"
-				}
-			]
-		},
-		{
-			"name": "Usuario",
-			"className": "Usuario",
-			"collectionName": "UsuarioCollection",
-			"scope": "public",
-			"attributes": [
-				{
-					"name": "UUID",
-					"kind": "storage",
-					"scope": "public",
-					"unique": true,
-					"autogenerate": true,
-					"type": "uuid",
-					"primKey": true
-				},
-				{
-					"name": "username",
-					"kind": "storage",
-					"scope": "public",
-					"unique": true,
-					"type": "string"
-				},
-				{
-					"name": "password",
-					"kind": "storage",
-					"scope": "public",
-					"type": "string"
-				},
-				{
-					"name": "contacto",
-					"kind": "relatedEntity",
-					"scope": "public",
-					"type": "Contacto",
-					"path": "Contacto"
-				},
-				{
-					"name": "proyectoCollection",
-					"kind": "relatedEntities",
-					"scope": "public",
-					"type": "ProyectoCollection",
-					"reversePath": true,
-					"path": "creador"
-				}
-			]
-		}
-	],
-	"type": []
-}
+﻿{	"toJSON": true,	"extraProperties": {		"version": "1",		"classes": {			"Empresa": {				"panelColor": "#70CCC2",				"panel": {					"isOpen": "true",					"pathVisible": true,					"position": {						"X": 40,						"Y": 10					}				}			},			"Contacto": {				"panelColor": "#D7E3BC",				"panel": {					"isOpen": "true",					"pathVisible": true,					"position": {						"X": 1397,						"Y": 37					}				}			},			"Proyecto": {				"panelColor": "#8DB3E2",				"panel": {					"isOpen": "true",					"pathVisible": true,					"position": {						"X": 32,						"Y": 374					}				}			},			"Usuario": {				"panelColor": "#B8CCE4",				"panel": {					"isOpen": "true",					"position": {						"X": 779,						"Y": 57					}				}			},			"Cotizacion": {				"panelColor": "#70CCC2",				"panel": {					"isOpen": "true",					"pathVisible": true,					"position": {						"X": 32,						"Y": 647					}				}			},			"Item": {				"panelColor": "#E5B9B7",				"panel": {					"isOpen": "true",					"pathVisible": true,					"position": {						"X": 505,						"Y": 670					}				}			},			"CategoriaItem": {				"panelColor": "#eee",				"panel": {					"isOpen": "true",					"pathVisible": true,					"position": {						"X": 303,						"Y": 854					}				}			},			"DetalleCotizacion": {				"panelColor": "#BFBFBF",				"panel": {					"isOpen": "true",					"pathVisible": true,					"position": {						"X": 17,						"Y": 886					}				}			},			"OrdenCompra": {				"panelColor": "#B8CCE4",				"panel": {					"isOpen": "true",					"position": {						"X": 508,						"Y": 17					},					"pathVisible": true				}			}		},		"model": {			"workspaceLeft": 1,			"workspaceTop": 0		}	},	"dataClasses": [		{			"name": "CategoriaItem",			"className": "CategoriaItem",			"collectionName": "CategoriaItemCollection",			"scope": "public",			"attributes": [				{					"name": "ID",					"kind": "storage",					"scope": "public",					"unique": true,					"autosequence": true,					"type": "long",					"primKey": true				},				{					"name": "nombre",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "empresa",					"kind": "relatedEntity",					"scope": "public",					"type": "Empresa",					"path": "Empresa"				},				{					"name": "itemCollection",					"kind": "relatedEntities",					"scope": "public",					"type": "ItemCollection",					"reversePath": true,					"path": "categoria"				},				{					"name": "detalleCotizacionCollection",					"kind": "relatedEntities",					"scope": "public",					"type": "DetalleCotizacionCollection",					"reversePath": true,					"path": "categoria"				}			]		},		{			"name": "Contacto",			"className": "Contacto",			"collectionName": "ContactoCollection",			"scope": "public",			"attributes": [				{					"name": "ID",					"kind": "storage",					"scope": "public",					"unique": true,					"autosequence": true,					"type": "long",					"primKey": true				},				{					"name": "email",					"kind": "storage",					"scope": "public",					"unique": true,					"type": "string",					"autoComplete": false				},				{					"name": "apPat",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "apMat",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "nombres",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "telefono",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "usuarioCollection",					"kind": "relatedEntities",					"scope": "public",					"type": "UsuarioCollection",					"reversePath": true,					"path": "contacto"				},				{					"name": "proyectoCollection",					"kind": "relatedEntities",					"scope": "public",					"type": "ProyectoCollection",					"reversePath": true,					"path": "cliente"				},				{					"name": "empresa",					"kind": "relatedEntity",					"scope": "public",					"type": "Empresa",					"path": "Empresa"				},				{					"name": "nombreCompleto",					"kind": "calculated",					"scope": "public",					"type": "string",					"scriptKind": "javascript",					"onGet": [						{							"from": "guidedModel.Contacto.nombreCompleto.onGet"						}					]				},				{					"name": "ordenCompraCollection",					"scope": "public",					"reversePath": true,					"path": "emisor",					"type": "OrdenCompraCollection",					"kind": "relatedEntities"				}			]		},		{			"name": "Cotizacion",			"className": "Cotizacion",			"collectionName": "CotizacionCollection",			"scope": "public",			"attributes": [				{					"name": "ID",					"kind": "storage",					"scope": "public",					"unique": true,					"autosequence": true,					"type": "long",					"primKey": true				},				{					"name": "proyecto",					"kind": "relatedEntity",					"scope": "public",					"type": "Proyecto",					"path": "Proyecto"				},				{					"name": "detalleCotizacionCollection",					"kind": "relatedEntities",					"scope": "public",					"type": "DetalleCotizacionCollection",					"reversePath": true,					"path": "cotizacion"				},				{					"name": "proyectoCollection",					"kind": "relatedEntities",					"scope": "public",					"type": "ProyectoCollection",					"reversePath": true,					"path": "cotizacion"				},				{					"name": "modificado",					"kind": "storage",					"scope": "public",					"type": "date",					"simpleDate": false				},				{					"name": "totalNeto",					"kind": "calculated",					"scope": "public",					"type": "number",					"scriptKind": "javascript"				}			]		},		{			"name": "DetalleCotizacion",			"className": "DetalleCotizacion",			"collectionName": "DetalleCotizacionCollection",			"scope": "public",			"attributes": [				{					"name": "ID",					"kind": "storage",					"scope": "public",					"unique": true,					"autosequence": true,					"type": "long",					"primKey": true				},				{					"name": "cotizacion",					"kind": "relatedEntity",					"scope": "public",					"type": "Cotizacion",					"path": "Cotizacion"				},				{					"name": "item",					"kind": "relatedEntity",					"scope": "public",					"type": "Item",					"path": "Item"				},				{					"name": "categoria",					"kind": "relatedEntity",					"scope": "public",					"type": "CategoriaItem",					"path": "CategoriaItem"				},				{					"name": "cantidad",					"kind": "storage",					"scope": "public",					"type": "number"				},				{					"name": "precioUnitario",					"kind": "storage",					"scope": "public",					"type": "number"				},				{					"name": "factor",					"kind": "storage",					"scope": "public",					"type": "number"				}			]		},		{			"name": "Empresa",			"className": "Empresa",			"collectionName": "EmpresaCollection",			"scope": "public",			"attributes": [				{					"name": "RUT",					"kind": "storage",					"scope": "public",					"unique": true,					"type": "long",					"primKey": true				},				{					"name": "razonSocial",					"kind": "storage",					"scope": "public",					"unique": true,					"type": "string"				},				{					"name": "alias",					"kind": "storage",					"scope": "public",					"unique": true,					"type": "string"				},				{					"name": "direccion",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "url",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "email",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "telefono",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "categoriaItemCollection",					"kind": "relatedEntities",					"scope": "public",					"type": "CategoriaItemCollection",					"reversePath": true,					"path": "empresa"				},				{					"name": "contactoCollection",					"kind": "relatedEntities",					"scope": "public",					"type": "ContactoCollection",					"reversePath": true,					"path": "empresa"				}			]		},		{			"name": "Item",			"className": "Item",			"collectionName": "ItemCollection",			"scope": "public",			"attributes": [				{					"name": "ID",					"kind": "storage",					"scope": "public",					"unique": true,					"autosequence": true,					"type": "long",					"primKey": true				},				{					"name": "categoria",					"kind": "relatedEntity",					"scope": "public",					"type": "CategoriaItem",					"path": "CategoriaItem"				},				{					"name": "detalleCotizacionCollection",					"kind": "relatedEntities",					"scope": "public",					"type": "DetalleCotizacionCollection",					"reversePath": true,					"path": "item"				}			]		},		{			"name": "Proyecto",			"className": "Proyecto",			"collectionName": "ProyectoCollection",			"scope": "public",			"publishAsJSGlobal": false,			"attributes": [				{					"name": "ID",					"kind": "storage",					"scope": "public",					"unique": true,					"autosequence": true,					"type": "long",					"primKey": true				},				{					"name": "referencia",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "creador",					"kind": "relatedEntity",					"scope": "public",					"type": "Usuario",					"path": "Usuario"				},				{					"name": "cliente",					"kind": "relatedEntity",					"scope": "public",					"type": "Contacto",					"path": "Contacto"				},				{					"name": "cotizacion",					"kind": "relatedEntity",					"scope": "public",					"type": "Cotizacion",					"path": "Cotizacion"				},				{					"name": "isNegocio",					"kind": "calculated",					"scope": "public",					"type": "bool",					"scriptKind": "javascript"				},				{					"name": "ordenCompraCollection",					"scope": "public",					"reversePath": true,					"path": "proyecto",					"type": "OrdenCompraCollection",					"kind": "relatedEntities"				}			]		},		{			"name": "Usuario",			"className": "Usuario",			"collectionName": "UsuarioCollection",			"scope": "public",			"attributes": [				{					"name": "UUID",					"kind": "storage",					"scope": "public",					"unique": true,					"autogenerate": true,					"type": "uuid",					"primKey": true				},				{					"name": "username",					"kind": "storage",					"scope": "public",					"unique": true,					"type": "string"				},				{					"name": "password",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "contacto",					"kind": "relatedEntity",					"scope": "public",					"type": "Contacto",					"path": "Contacto"				},				{					"name": "proyectoCollection",					"kind": "relatedEntities",					"scope": "public",					"type": "ProyectoCollection",					"reversePath": true,					"path": "creador"				}			]		},		{			"collectionName": "OrdenCompraCollection",			"className": "OrdenCompra",			"attributes": [				{					"name": "ID",					"kind": "storage",					"type": "long",					"autosequence": "true",					"unique": "true",					"primKey": "true"				},				{					"name": "fechaCreacion",					"scope": "public",					"type": "date",					"kind": "storage"				},				{					"name": "proyecto",					"scope": "public",					"path": "Proyecto",					"type": "Proyecto",					"kind": "relatedEntity"				},				{					"name": "folio",					"scope": "public",					"type": "long",					"kind": "storage",					"autosequence": true,					"unique": true,					"defaultFormat": [						{							"presentation": "text",							"format": null						}					]				},				{					"name": "emisor",					"scope": "public",					"path": "Contacto",					"type": "Contacto",					"kind": "relatedEntity"				}			]		}	],	"type": []}
