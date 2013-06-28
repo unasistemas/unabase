@@ -104,8 +104,8 @@
 			}
 		},
 		"model": {
-			"workspaceLeft": 193,
-			"workspaceTop": 0
+			"workspaceLeft": 160,
+			"workspaceTop": 700
 		}
 	},
 	"dataClasses": [
@@ -383,7 +383,6 @@
 				{
 					"name": "userName",
 					"kind": "storage",
-					"scope": "public",
 					"type": "string"
 				}
 			]
@@ -511,5 +510,6 @@
 				}
 			]
 		}
-	]
+	],
+	"type": []
 }
