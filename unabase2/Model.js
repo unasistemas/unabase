@@ -5,9 +5,61 @@ guidedModel =// @startlock
 	{
 		events :
 		{
-			onValidate:function()
+			onInit:function()
 			{// @endlock
+				this.isPersona = true;
 				this.isUsuario = true;
+			}// @startlock
+		}
+	},
+	Empresa :
+	{
+		events :
+		{
+			onInit:function()
+			{// @endlock
+				this.isEmpresa = true;
+			}// @startlock
+		}
+	},
+	Persona :
+	{
+		events :
+		{
+			onInit:function()
+			{// @endlock
+				this.isPersona = true;
+			}// @startlock
+		}
+	},
+	EntradaEmpleado :
+	{
+		events :
+		{
+			onInit:function()
+			{// @endlock
+				this.isEmpleado = true;
+				this.isPersona = true;
+			}// @startlock
+		}
+	},
+	EntradaProveedor :
+	{
+		events :
+		{
+			onInit:function()
+			{// @endlock
+				this.isProveedor = true;
+			}// @startlock
+		}
+	},
+	EntradaCliente :
+	{
+		events :
+		{
+			onInit:function()
+			{// @endlock
+				this.isCliente = true;
 			}// @startlock
 		}
 	},
@@ -20,61 +72,10 @@ guidedModel =// @startlock
 				this.isSistema = false;
 				return ds.Sistema.all();
 			},// @startlock
-			onValidate:function()
+			onInit:function()
 			{// @endlock
+				this.isEmpresa = true;
 				this.isSistema = true;
-				this.isEmpresa = true;
-			}// @startlock
-		}
-	},
-	Empresa :
-	{
-		events :
-		{
-			onValidate:function()
-			{// @endlock
-				this.isEmpresa = true;
-			}// @startlock
-		}
-	},
-	EntradaEmpleado :
-	{
-		events :
-		{
-			onValidate:function()
-			{// @endlock
-				this.isEmpleado = true;
-				this.isPersona = true;
-			}// @startlock
-		}
-	},
-	Persona :
-	{
-		events :
-		{
-			onValidate:function()
-			{// @endlock
-				this.isPersona = true;
-			}// @startlock
-		}
-	},
-	EntradaCliente :
-	{
-		events :
-		{
-			onValidate:function()
-			{// @endlock
-				this.isCliente = true;
-			}// @startlock
-		}
-	},
-	EntradaProveedor :
-	{
-		events :
-		{
-			onValidate:function()
-			{// @endlock
-				this.isProveedor = true;
 			}// @startlock
 		}
 	},

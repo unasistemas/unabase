@@ -5,9 +5,9 @@
 
 #{id}label1 {
 	 top: -16px;
-	 bottom: 526px;
+	 bottom: 502px;
 	 left: 4px;
-	 right: 391px;
+	 right: 112px;
 	
 	 position: absolute;
 	 
@@ -15,7 +15,7 @@
 
 #{id}dataGridProyectos {
 	 top: 4px;
-	 bottom: 4px;
+	 bottom: 21px;
 	 left: 4px;
 	 right: 4px;
 	
@@ -28,7 +28,7 @@
 #{id}componentBuscador {
 	 width: 200px;
 	 top: 4px;
-	 bottom: 4px;
+	 bottom: 21px;
 	 left: 4px;
 	
 	 position: relative;

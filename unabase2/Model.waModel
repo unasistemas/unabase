@@ -86,8 +86,8 @@
 					"isOpen": "true",
 					"pathVisible": false,
 					"position": {
-						"X": 1261,
-						"Y": 1204
+						"X": 1225,
+						"Y": 1208
 					}
 				}
 			},
@@ -97,15 +97,15 @@
 					"isOpen": "true",
 					"pathVisible": true,
 					"position": {
-						"X": 1555,
-						"Y": 1204
+						"X": 1514,
+						"Y": 1210
 					}
 				}
 			}
 		},
 		"model": {
-			"workspaceLeft": 1344,
-			"workspaceTop": 1100
+			"workspaceLeft": 1099,
+			"workspaceTop": 0
 		}
 	},
 	"dataClasses": [
@@ -113,7 +113,7 @@
 			"name": "Contacto",
 			"className": "Contacto",
 			"collectionName": "ContactoCollection",
-			"scope": "public",
+			"scope": "publicOnServer",
 			"attributes": [
 				{
 					"name": "UUID",
@@ -208,25 +208,25 @@
 				{
 					"name": "isPersona",
 					"kind": "storage",
-					"scope": "public",
+					"scope": "protected",
 					"type": "bool"
 				},
 				{
 					"name": "isEmpresa",
 					"kind": "storage",
-					"scope": "public",
+					"scope": "protected",
 					"type": "bool"
 				},
 				{
 					"name": "isUsuario",
 					"kind": "storage",
-					"scope": "public",
+					"scope": "protected",
 					"type": "bool"
 				},
 				{
 					"name": "isSistema",
 					"kind": "storage",
-					"scope": "public",
+					"scope": "protected",
 					"type": "bool"
 				}
 			]
@@ -244,6 +244,38 @@
 			],
 			"attributes": [
 				{
+					"name": "userName",
+					"kind": "removed"
+				},
+				{
+					"name": "razonSocial",
+					"kind": "removed"
+				},
+				{
+					"name": "giro",
+					"kind": "removed"
+				},
+				{
+					"name": "password",
+					"kind": "removed"
+				},
+				{
+					"name": "domainName",
+					"kind": "removed"
+				},
+				{
+					"name": "isEmpresa",
+					"kind": "removed"
+				},
+				{
+					"name": "isUsuario",
+					"kind": "removed"
+				},
+				{
+					"name": "isSistema",
+					"kind": "removed"
+				},
+				{
 					"name": "UUID",
 					"kind": "storage",
 					"scope": "public",
@@ -264,7 +296,7 @@
 					"name": "isDocExtranjero",
 					"kind": "storage",
 					"scope": "public",
-					"not_null": true,
+					"not_null": false,
 					"type": "bool"
 				},
 				{
@@ -272,18 +304,12 @@
 					"kind": "storage",
 					"scope": "public",
 					"type": "image"
-				},
-				{
-					"name": "userName",
-					"kind": "storage",
-					"scope": "public",
-					"type": "string"
 				}
 			],
 			"events": [
 				{
-					"kind": "onValidate",
-					"from": "guidedModel.Persona.events.onValidate"
+					"kind": "onInit",
+					"from": "guidedModel.Persona.events.onInit"
 				}
 			]
 		},
@@ -300,6 +326,42 @@
 			],
 			"attributes": [
 				{
+					"name": "userName",
+					"kind": "removed"
+				},
+				{
+					"name": "apPat",
+					"kind": "removed"
+				},
+				{
+					"name": "apMat",
+					"kind": "removed"
+				},
+				{
+					"name": "nombres",
+					"kind": "removed"
+				},
+				{
+					"name": "password",
+					"kind": "removed"
+				},
+				{
+					"name": "domainName",
+					"kind": "removed"
+				},
+				{
+					"name": "isPersona",
+					"kind": "removed"
+				},
+				{
+					"name": "isUsuario",
+					"kind": "removed"
+				},
+				{
+					"name": "isSistema",
+					"kind": "removed"
+				},
+				{
 					"name": "UUID",
 					"kind": "storage",
 					"scope": "public",
@@ -320,7 +382,6 @@
 					"name": "isDocExtranjero",
 					"kind": "storage",
 					"scope": "public",
-					"not_null": true,
 					"type": "bool"
 				},
 				{
@@ -328,18 +389,12 @@
 					"kind": "storage",
 					"scope": "public",
 					"type": "image"
-				},
-				{
-					"name": "userName",
-					"kind": "storage",
-					"scope": "public",
-					"type": "string"
 				}
 			],
 			"events": [
 				{
-					"kind": "onValidate",
-					"from": "guidedModel.Empresa.events.onValidate"
+					"kind": "onInit",
+					"from": "guidedModel.Empresa.events.onInit"
 				}
 			]
 		},
@@ -354,10 +409,32 @@
 					"queryStatement": "isUsuario == true"
 				}
 			],
+			"attributes": [
+				{
+					"name": "razonSocial",
+					"kind": "removed"
+				},
+				{
+					"name": "giro",
+					"kind": "removed"
+				},
+				{
+					"name": "domainName",
+					"kind": "removed"
+				},
+				{
+					"name": "isEmpresa",
+					"kind": "removed"
+				},
+				{
+					"name": "isSistema",
+					"kind": "removed"
+				}
+			],
 			"events": [
 				{
-					"kind": "onValidate",
-					"from": "guidedModel.Usuario.events.onValidate"
+					"kind": "onInit",
+					"from": "guidedModel.Usuario.events.onInit"
 				}
 			]
 		},
@@ -374,6 +451,34 @@
 			],
 			"attributes": [
 				{
+					"name": "apPat",
+					"kind": "removed"
+				},
+				{
+					"name": "apMat",
+					"kind": "removed"
+				},
+				{
+					"name": "nombres",
+					"kind": "removed"
+				},
+				{
+					"name": "userName",
+					"kind": "removed"
+				},
+				{
+					"name": "password",
+					"kind": "removed"
+				},
+				{
+					"name": "isPersona",
+					"kind": "removed"
+				},
+				{
+					"name": "isUsuario",
+					"kind": "removed"
+				},
+				{
 					"name": "entradaDirectorioCollection",
 					"kind": "relatedEntities",
 					"scope": "public",
@@ -384,12 +489,12 @@
 			],
 			"events": [
 				{
-					"kind": "onValidate",
-					"from": "guidedModel.Sistema.events.onValidate"
+					"kind": "onInit",
+					"from": "guidedModel.Sistema.events.onInit"
 				},
 				{
-					"from": "guidedModel.Sistema.events.onRemove",
-					"kind": "onRemove"
+					"kind": "onRemove",
+					"from": "guidedModel.Sistema.events.onRemove"
 				}
 			]
 		},
@@ -397,7 +502,7 @@
 			"name": "EntradaDirectorio",
 			"className": "EntradaDirectorio",
 			"collectionName": "EntradaDirectorioCollection",
-			"scope": "public",
+			"scope": "publicOnServer",
 			"attributes": [
 				{
 					"name": "UUID",
@@ -449,19 +554,19 @@
 				{
 					"name": "isEmpleado",
 					"kind": "storage",
-					"scope": "public",
+					"scope": "protected",
 					"type": "bool"
 				},
 				{
 					"name": "isProveedor",
 					"kind": "storage",
-					"scope": "public",
+					"scope": "protected",
 					"type": "bool"
 				},
 				{
 					"name": "isCliente",
 					"kind": "storage",
-					"scope": "public",
+					"scope": "protected",
 					"type": "bool"
 				}
 			]
@@ -477,10 +582,20 @@
 					"queryStatement": "isEmpleado == true"
 				}
 			],
+			"attributes": [
+				{
+					"name": "isProveedor",
+					"kind": "removed"
+				},
+				{
+					"name": "isCliente",
+					"kind": "removed"
+				}
+			],
 			"events": [
 				{
-					"kind": "onValidate",
-					"from": "guidedModel.EntradaEmpleado.events.onValidate"
+					"kind": "onInit",
+					"from": "guidedModel.EntradaEmpleado.events.onInit"
 				}
 			]
 		},
@@ -495,10 +610,24 @@
 					"queryStatement": "isProveedor == true"
 				}
 			],
+			"attributes": [
+				{
+					"name": "cargo",
+					"kind": "removed"
+				},
+				{
+					"name": "isEmpleado",
+					"kind": "removed"
+				},
+				{
+					"name": "isCliente",
+					"kind": "removed"
+				}
+			],
 			"events": [
 				{
-					"kind": "onValidate",
-					"from": "guidedModel.EntradaProveedor.events.onValidate"
+					"kind": "onInit",
+					"from": "guidedModel.EntradaProveedor.events.onInit"
 				}
 			]
 		},
@@ -513,12 +642,27 @@
 					"queryStatement": "isCliente == true"
 				}
 			],
+			"attributes": [
+				{
+					"name": "cargo",
+					"kind": "removed"
+				},
+				{
+					"name": "isEmpleado",
+					"kind": "removed"
+				},
+				{
+					"name": "isProveedor",
+					"kind": "removed"
+				}
+			],
 			"events": [
 				{
-					"kind": "onValidate",
-					"from": "guidedModel.EntradaCliente.events.onValidate"
+					"kind": "onInit",
+					"from": "guidedModel.EntradaCliente.events.onInit"
 				}
 			]
 		}
-	]
+	],
+	"type": []
 }

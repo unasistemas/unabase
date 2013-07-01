@@ -1,1 +1,1437 @@
-﻿{	"toJSON": true,	"extraProperties": {		"version": "1",		"classes": {			"Empresa": {				"panelColor": "#70CCC2",				"panel": {					"isOpen": "true",					"pathVisible": true,					"position": {						"X": 40,						"Y": 10					}				}			},			"Contacto": {				"panelColor": "#D7E3BC",				"panel": {					"isOpen": "true",					"pathVisible": true,					"position": {						"X": 1397,						"Y": 37					}				}			},			"Proyecto": {				"panelColor": "#8DB3E2",				"panel": {					"isOpen": "true",					"pathVisible": true,					"position": {						"X": 32,						"Y": 374					}				}			},			"Usuario": {				"panelColor": "#B8CCE4",				"panel": {					"isOpen": "true",					"position": {						"X": 779,						"Y": 57					}				}			},			"Cotizacion": {				"panelColor": "#70CCC2",				"panel": {					"isOpen": "true",					"pathVisible": true,					"position": {						"X": 32,						"Y": 647					}				}			},			"Item": {				"panelColor": "#E5B9B7",				"panel": {					"isOpen": "true",					"pathVisible": true,					"position": {						"X": 505,						"Y": 670					}				}			},			"CategoriaItem": {				"panelColor": "#eee",				"panel": {					"isOpen": "true",					"pathVisible": true,					"position": {						"X": 303,						"Y": 854					}				}			},			"DetalleCotizacion": {				"panelColor": "#BFBFBF",				"panel": {					"isOpen": "true",					"pathVisible": true,					"position": {						"X": 17,						"Y": 886					}				}			},			"OrdenCompra": {				"panelColor": "#B8CCE4",				"panel": {					"isOpen": "true",					"position": {						"X": 508,						"Y": 17					},					"pathVisible": true				}			}		},		"model": {			"workspaceLeft": 1,			"workspaceTop": 0		}	},	"dataClasses": [		{			"name": "CategoriaItem",			"className": "CategoriaItem",			"collectionName": "CategoriaItemCollection",			"scope": "public",			"attributes": [				{					"name": "ID",					"kind": "storage",					"scope": "public",					"unique": true,					"autosequence": true,					"type": "long",					"primKey": true				},				{					"name": "nombre",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "empresa",					"kind": "relatedEntity",					"scope": "public",					"type": "Empresa",					"path": "Empresa"				},				{					"name": "itemCollection",					"kind": "relatedEntities",					"scope": "public",					"type": "ItemCollection",					"reversePath": true,					"path": "categoria"				},				{					"name": "detalleCotizacionCollection",					"kind": "relatedEntities",					"scope": "public",					"type": "DetalleCotizacionCollection",					"reversePath": true,					"path": "categoria"				}			]		},		{			"name": "Contacto",			"className": "Contacto",			"collectionName": "ContactoCollection",			"scope": "public",			"attributes": [				{					"name": "ID",					"kind": "storage",					"scope": "public",					"unique": true,					"autosequence": true,					"type": "long",					"primKey": true				},				{					"name": "email",					"kind": "storage",					"scope": "public",					"unique": true,					"type": "string",					"autoComplete": false				},				{					"name": "apPat",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "apMat",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "nombres",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "telefono",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "usuarioCollection",					"kind": "relatedEntities",					"scope": "public",					"type": "UsuarioCollection",					"reversePath": true,					"path": "contacto"				},				{					"name": "proyectoCollection",					"kind": "relatedEntities",					"scope": "public",					"type": "ProyectoCollection",					"reversePath": true,					"path": "cliente"				},				{					"name": "empresa",					"kind": "relatedEntity",					"scope": "public",					"type": "Empresa",					"path": "Empresa"				},				{					"name": "nombreCompleto",					"kind": "calculated",					"scope": "public",					"type": "string",					"scriptKind": "javascript",					"onGet": [						{							"from": "guidedModel.Contacto.nombreCompleto.onGet"						}					]				},				{					"name": "ordenCompraCollection",					"scope": "public",					"reversePath": true,					"path": "emisor",					"type": "OrdenCompraCollection",					"kind": "relatedEntities"				}			]		},		{			"name": "Cotizacion",			"className": "Cotizacion",			"collectionName": "CotizacionCollection",			"scope": "public",			"attributes": [				{					"name": "ID",					"kind": "storage",					"scope": "public",					"unique": true,					"autosequence": true,					"type": "long",					"primKey": true				},				{					"name": "proyecto",					"kind": "relatedEntity",					"scope": "public",					"type": "Proyecto",					"path": "Proyecto"				},				{					"name": "detalleCotizacionCollection",					"kind": "relatedEntities",					"scope": "public",					"type": "DetalleCotizacionCollection",					"reversePath": true,					"path": "cotizacion"				},				{					"name": "proyectoCollection",					"kind": "relatedEntities",					"scope": "public",					"type": "ProyectoCollection",					"reversePath": true,					"path": "cotizacion"				},				{					"name": "modificado",					"kind": "storage",					"scope": "public",					"type": "date",					"simpleDate": false				},				{					"name": "totalNeto",					"kind": "calculated",					"scope": "public",					"type": "number",					"scriptKind": "javascript"				}			]		},		{			"name": "DetalleCotizacion",			"className": "DetalleCotizacion",			"collectionName": "DetalleCotizacionCollection",			"scope": "public",			"attributes": [				{					"name": "ID",					"kind": "storage",					"scope": "public",					"unique": true,					"autosequence": true,					"type": "long",					"primKey": true				},				{					"name": "cotizacion",					"kind": "relatedEntity",					"scope": "public",					"type": "Cotizacion",					"path": "Cotizacion"				},				{					"name": "item",					"kind": "relatedEntity",					"scope": "public",					"type": "Item",					"path": "Item"				},				{					"name": "categoria",					"kind": "relatedEntity",					"scope": "public",					"type": "CategoriaItem",					"path": "CategoriaItem"				},				{					"name": "cantidad",					"kind": "storage",					"scope": "public",					"type": "number"				},				{					"name": "precioUnitario",					"kind": "storage",					"scope": "public",					"type": "number"				},				{					"name": "factor",					"kind": "storage",					"scope": "public",					"type": "number"				}			]		},		{			"name": "Empresa",			"className": "Empresa",			"collectionName": "EmpresaCollection",			"scope": "public",			"attributes": [				{					"name": "RUT",					"kind": "storage",					"scope": "public",					"unique": true,					"type": "long",					"primKey": true				},				{					"name": "razonSocial",					"kind": "storage",					"scope": "public",					"unique": true,					"type": "string"				},				{					"name": "alias",					"kind": "storage",					"scope": "public",					"unique": true,					"type": "string"				},				{					"name": "direccion",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "url",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "email",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "telefono",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "categoriaItemCollection",					"kind": "relatedEntities",					"scope": "public",					"type": "CategoriaItemCollection",					"reversePath": true,					"path": "empresa"				},				{					"name": "contactoCollection",					"kind": "relatedEntities",					"scope": "public",					"type": "ContactoCollection",					"reversePath": true,					"path": "empresa"				}			]		},		{			"name": "Item",			"className": "Item",			"collectionName": "ItemCollection",			"scope": "public",			"attributes": [				{					"name": "ID",					"kind": "storage",					"scope": "public",					"unique": true,					"autosequence": true,					"type": "long",					"primKey": true				},				{					"name": "categoria",					"kind": "relatedEntity",					"scope": "public",					"type": "CategoriaItem",					"path": "CategoriaItem"				},				{					"name": "detalleCotizacionCollection",					"kind": "relatedEntities",					"scope": "public",					"type": "DetalleCotizacionCollection",					"reversePath": true,					"path": "item"				}			]		},		{			"name": "Proyecto",			"className": "Proyecto",			"collectionName": "ProyectoCollection",			"scope": "public",			"publishAsJSGlobal": false,			"attributes": [				{					"name": "ID",					"kind": "storage",					"scope": "public",					"unique": true,					"autosequence": true,					"type": "long",					"primKey": true				},				{					"name": "referencia",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "creador",					"kind": "relatedEntity",					"scope": "public",					"type": "Usuario",					"path": "Usuario"				},				{					"name": "cliente",					"kind": "relatedEntity",					"scope": "public",					"type": "Contacto",					"path": "Contacto"				},				{					"name": "cotizacion",					"kind": "relatedEntity",					"scope": "public",					"type": "Cotizacion",					"path": "Cotizacion"				},				{					"name": "isNegocio",					"kind": "calculated",					"scope": "public",					"type": "bool",					"scriptKind": "javascript"				},				{					"name": "ordenCompraCollection",					"scope": "public",					"reversePath": true,					"path": "proyecto",					"type": "OrdenCompraCollection",					"kind": "relatedEntities"				}			]		},		{			"name": "Usuario",			"className": "Usuario",			"collectionName": "UsuarioCollection",			"scope": "public",			"attributes": [				{					"name": "UUID",					"kind": "storage",					"scope": "public",					"unique": true,					"autogenerate": true,					"type": "uuid",					"primKey": true				},				{					"name": "username",					"kind": "storage",					"scope": "public",					"unique": true,					"type": "string"				},				{					"name": "password",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "contacto",					"kind": "relatedEntity",					"scope": "public",					"type": "Contacto",					"path": "Contacto"				},				{					"name": "proyectoCollection",					"kind": "relatedEntities",					"scope": "public",					"type": "ProyectoCollection",					"reversePath": true,					"path": "creador"				}			]		},		{			"collectionName": "OrdenCompraCollection",			"className": "OrdenCompra",			"attributes": [				{					"name": "ID",					"kind": "storage",					"type": "long",					"autosequence": "true",					"unique": "true",					"primKey": "true"				},				{					"name": "fechaCreacion",					"scope": "public",					"type": "date",					"kind": "storage"				},				{					"name": "proyecto",					"scope": "public",					"path": "Proyecto",					"type": "Proyecto",					"kind": "relatedEntity"				},				{					"name": "folio",					"scope": "public",					"type": "long",					"kind": "storage",					"autosequence": true,					"unique": true,					"defaultFormat": [						{							"presentation": "text",							"format": null						}					]				},				{					"name": "emisor",					"scope": "public",					"path": "Contacto",					"type": "Contacto",					"kind": "relatedEntity"				}			]		}	],	"type": []}
+﻿{
+	"toJSON": true,
+	"extraProperties": {
+		"version": "1",
+		"classes": {
+			"Contacto": {
+				"panelColor": "#CCC1D9",
+				"panel": {
+					"isOpen": "true",
+					"pathVisible": true,
+					"position": {
+						"X": 1258,
+						"Y": 13
+					}
+				}
+			},
+			"Empresa": {
+				"panelColor": "#CCC1D9",
+				"panel": {
+					"isOpen": "true",
+					"pathVisible": false,
+					"position": {
+						"X": 1526,
+						"Y": 627
+					}
+				}
+			},
+			"Persona": {
+				"panelColor": "#D7E3BC",
+				"panel": {
+					"isOpen": "true",
+					"pathVisible": false,
+					"position": {
+						"X": 1253,
+						"Y": 626
+					}
+				}
+			},
+			"EntradaDirectorio": {
+				"panelColor": "#4FA997",
+				"panel": {
+					"isOpen": "true",
+					"pathVisible": true,
+					"position": {
+						"X": 265,
+						"Y": 5
+					}
+				}
+			},
+			"EntradaEmpleado": {
+				"panelColor": "#70CCC2",
+				"panel": {
+					"isOpen": "true",
+					"pathVisible": true,
+					"position": {
+						"X": 50,
+						"Y": 360
+					}
+				}
+			},
+			"EntradaProveedor": {
+				"panelColor": "#996699",
+				"panel": {
+					"isOpen": "true",
+					"pathVisible": true,
+					"position": {
+						"X": 315,
+						"Y": 362
+					}
+				}
+			},
+			"EntradaCliente": {
+				"panelColor": "#B2A2C7",
+				"panel": {
+					"isOpen": "true",
+					"pathVisible": false,
+					"position": {
+						"X": 573,
+						"Y": 364
+					}
+				}
+			},
+			"Usuario": {
+				"panelColor": "#76923C",
+				"panel": {
+					"isOpen": "true",
+					"pathVisible": false,
+					"position": {
+						"X": 1274,
+						"Y": 1215
+					}
+				}
+			},
+			"Sistema": {
+				"panelColor": "#eee",
+				"panel": {
+					"isOpen": "true",
+					"pathVisible": false,
+					"position": {
+						"X": 1514,
+						"Y": 1210
+					}
+				}
+			},
+			"Proyecto": {
+				"panelColor": "#CCC1D9",
+				"panel": {
+					"isOpen": "true",
+					"pathVisible": true,
+					"position": {
+						"X": 1883,
+						"Y": 27
+					}
+				}
+			},
+			"Presupuesto": {
+				"panelColor": "#D8D8D8",
+				"panel": {
+					"isOpen": "true",
+					"pathVisible": false,
+					"position": {
+						"X": 1897,
+						"Y": 449
+					}
+				}
+			},
+			"Negocio": {
+				"panelColor": "#548DD4",
+				"panel": {
+					"isOpen": "true",
+					"position": {
+						"X": 2219,
+						"Y": 447
+					}
+				}
+			},
+			"ProyectoAtributoClave": {
+				"panelColor": "#D88CFF",
+				"panel": {
+					"isOpen": "true",
+					"pathVisible": true,
+					"position": {
+						"X": 2540,
+						"Y": 35
+					}
+				}
+			},
+			"ProyectoAtributoValor": {
+				"panelColor": "#D88CFF",
+				"panel": {
+					"isOpen": "true",
+					"pathVisible": false,
+					"position": {
+						"X": 2537,
+						"Y": 343
+					}
+				}
+			},
+			"ProyectoAtributo": {
+				"panelColor": "#7F7F7F",
+				"panel": {
+					"isOpen": "true",
+					"pathVisible": false,
+					"position": {
+						"X": 2278,
+						"Y": 24
+					}
+				}
+			},
+			"ProyectoDetalle": {
+				"panel": {
+					"pathVisible": true,
+					"position": {
+						"X": 1907,
+						"Y": 884
+					},
+					"isOpen": "true"
+				},
+				"panelColor": "#548DD4"
+			},
+			"Item": {
+				"panel": {
+					"pathVisible": false,
+					"position": {
+						"X": 2219,
+						"Y": 772
+					},
+					"isOpen": "true"
+				},
+				"panelColor": "#B8CCE4"
+			},
+			"Catalogo": {
+				"panelColor": "#C3D69B",
+				"panel": {
+					"isOpen": "true",
+					"position": {
+						"X": 2217,
+						"Y": 1032
+					},
+					"pathVisible": false
+				}
+			},
+			"ProyectoCondicion": {
+				"panelColor": "#4FA997",
+				"panel": {
+					"isOpen": "true",
+					"position": {
+						"X": 1897,
+						"Y": 1185
+					},
+					"pathVisible": true
+				}
+			},
+			"ProyectoCondicionAtributo": {
+				"panelColor": "#C4BD97",
+				"panel": {
+					"isOpen": "true",
+					"position": {
+						"X": 1898,
+						"Y": 1438
+					},
+					"pathVisible": false
+				}
+			},
+			"ProyectoCondicionAtributoClave": {
+				"panelColor": "#D88CFF",
+				"panel": {
+					"isOpen": "true",
+					"position": {
+						"X": 2140,
+						"Y": 1413
+					},
+					"pathVisible": false
+				}
+			},
+			"ProyectoCondicionPago": {
+				"panelColor": "#548DD4",
+				"panel": {
+					"isOpen": "true",
+					"position": {
+						"X": 2140,
+						"Y": 1602
+					},
+					"pathVisible": false
+				}
+			}
+		},
+		"model": {
+			"workspaceLeft": 1973,
+			"workspaceTop": 1112
+		}
+	},
+	"dataClasses": [
+		{
+			"name": "Contacto",
+			"className": "Contacto",
+			"collectionName": "ContactoCollection",
+			"scope": "publicOnServer",
+			"attributes": [
+				{
+					"name": "UUID",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"autosequence": true,
+					"autogenerate": true,
+					"type": "uuid",
+					"primKey": true
+				},
+				{
+					"name": "docIdentidad",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"type": "string",
+					"events": [
+						{
+							"kind": "onValidate",
+							"from": "guidedModel.Contacto.docIdentidad.events.onValidate"
+						}
+					]
+				},
+				{
+					"name": "isDocExtranjero",
+					"kind": "storage",
+					"scope": "public",
+					"type": "bool"
+				},
+				{
+					"name": "imagen",
+					"kind": "storage",
+					"scope": "public",
+					"type": "image"
+				},
+				{
+					"name": "apPat",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "apMat",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "nombres",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "razonSocial",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "giro",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string",
+					"autoComplete": true
+				},
+				{
+					"name": "userName",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "password",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "domainName",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "isActivo",
+					"kind": "storage",
+					"scope": "public",
+					"type": "bool"
+				},
+				{
+					"name": "isPersona",
+					"kind": "storage",
+					"scope": "protected",
+					"type": "bool"
+				},
+				{
+					"name": "isEmpresa",
+					"kind": "storage",
+					"scope": "protected",
+					"type": "bool"
+				},
+				{
+					"name": "isUsuario",
+					"kind": "storage",
+					"scope": "protected",
+					"type": "bool"
+				},
+				{
+					"name": "isSistema",
+					"kind": "storage",
+					"scope": "protected",
+					"type": "bool"
+				}
+			]
+		},
+		{
+			"name": "Persona",
+			"className": "Persona",
+			"collectionName": "PersonaCollection",
+			"scope": "public",
+			"extends": "Contacto",
+			"restrictingQuery": [
+				{
+					"queryStatement": "isPersona == true"
+				}
+			],
+			"attributes": [
+				{
+					"name": "userName",
+					"kind": "removed"
+				},
+				{
+					"name": "razonSocial",
+					"kind": "removed"
+				},
+				{
+					"name": "giro",
+					"kind": "removed"
+				},
+				{
+					"name": "password",
+					"kind": "removed"
+				},
+				{
+					"name": "domainName",
+					"kind": "removed"
+				},
+				{
+					"name": "isEmpresa",
+					"kind": "removed"
+				},
+				{
+					"name": "isUsuario",
+					"kind": "removed"
+				},
+				{
+					"name": "isSistema",
+					"kind": "removed"
+				},
+				{
+					"name": "UUID",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"autosequence": true,
+					"autogenerate": true,
+					"type": "uuid"
+				},
+				{
+					"name": "docIdentidad",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"not_null": true,
+					"type": "string"
+				},
+				{
+					"name": "isDocExtranjero",
+					"kind": "storage",
+					"scope": "public",
+					"type": "bool"
+				},
+				{
+					"name": "imagen",
+					"kind": "storage",
+					"scope": "public",
+					"type": "image"
+				}
+			],
+			"events": [
+				{
+					"kind": "onInit",
+					"from": "guidedModel.Persona.events.onInit"
+				}
+			]
+		},
+		{
+			"name": "Empresa",
+			"className": "Empresa",
+			"collectionName": "EmpresaCollection",
+			"scope": "public",
+			"extends": "Contacto",
+			"restrictingQuery": [
+				{
+					"queryStatement": "isEmpresa == true"
+				}
+			],
+			"attributes": [
+				{
+					"name": "userName",
+					"kind": "removed"
+				},
+				{
+					"name": "apPat",
+					"kind": "removed"
+				},
+				{
+					"name": "apMat",
+					"kind": "removed"
+				},
+				{
+					"name": "nombres",
+					"kind": "removed"
+				},
+				{
+					"name": "password",
+					"kind": "removed"
+				},
+				{
+					"name": "domainName",
+					"kind": "removed"
+				},
+				{
+					"name": "isPersona",
+					"kind": "removed"
+				},
+				{
+					"name": "isUsuario",
+					"kind": "removed"
+				},
+				{
+					"name": "isSistema",
+					"kind": "removed"
+				},
+				{
+					"name": "UUID",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"autosequence": true,
+					"autogenerate": true,
+					"type": "uuid"
+				},
+				{
+					"name": "docIdentidad",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"not_null": true,
+					"type": "string"
+				},
+				{
+					"name": "isDocExtranjero",
+					"kind": "storage",
+					"scope": "public",
+					"type": "bool"
+				},
+				{
+					"name": "imagen",
+					"kind": "storage",
+					"scope": "public",
+					"type": "image"
+				},
+				{
+					"name": "entradaEmpleadoCollection",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "EntradaEmpleadoCollection",
+					"reversePath": true,
+					"path": "empresa"
+				}
+			],
+			"events": [
+				{
+					"kind": "onInit",
+					"from": "guidedModel.Empresa.events.onInit"
+				}
+			]
+		},
+		{
+			"name": "Usuario",
+			"className": "Usuario",
+			"collectionName": "UsuarioCollection",
+			"scope": "public",
+			"extends": "Contacto",
+			"restrictingQuery": [
+				{
+					"queryStatement": "isUsuario == true"
+				}
+			],
+			"attributes": [
+				{
+					"name": "razonSocial",
+					"kind": "removed"
+				},
+				{
+					"name": "giro",
+					"kind": "removed"
+				},
+				{
+					"name": "domainName",
+					"kind": "removed"
+				},
+				{
+					"name": "isEmpresa",
+					"kind": "removed"
+				},
+				{
+					"name": "isSistema",
+					"kind": "removed"
+				}
+			],
+			"events": [
+				{
+					"kind": "onInit",
+					"from": "guidedModel.Usuario.events.onInit"
+				}
+			]
+		},
+		{
+			"name": "Sistema",
+			"className": "Sistema",
+			"collectionName": "SistemaCollection",
+			"scope": "public",
+			"extends": "Contacto",
+			"restrictingQuery": [
+				{
+					"queryStatement": "isSistema == true"
+				}
+			],
+			"attributes": [
+				{
+					"name": "apPat",
+					"kind": "removed"
+				},
+				{
+					"name": "apMat",
+					"kind": "removed"
+				},
+				{
+					"name": "nombres",
+					"kind": "removed"
+				},
+				{
+					"name": "userName",
+					"kind": "removed"
+				},
+				{
+					"name": "password",
+					"kind": "removed"
+				},
+				{
+					"name": "isPersona",
+					"kind": "removed"
+				},
+				{
+					"name": "isUsuario",
+					"kind": "removed"
+				},
+				{
+					"name": "entradaDirectorioCollection",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "EntradaDirectorioCollection",
+					"reversePath": true,
+					"path": "sistema"
+				},
+				{
+					"name": "atributoPersonalizadoCollection",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "ProyectoAtributoClaveCollection",
+					"reversePath": true,
+					"path": "sistema"
+				},
+				{
+					"name": "categoriaItemCollection",
+					"scope": "public",
+					"reversePath": true,
+					"path": "sistema",
+					"type": "CatalogoCollection",
+					"kind": "relatedEntities"
+				},
+				{
+					"name": "proyectoCondicionAtributoClaveCollection",
+					"scope": "public",
+					"reversePath": true,
+					"path": "sistema",
+					"type": "ProyectoCondicionAtributoClaveCollection",
+					"kind": "relatedEntities"
+				}
+			],
+			"events": [
+				{
+					"kind": "onInit",
+					"from": "guidedModel.Sistema.events.onInit"
+				},
+				{
+					"kind": "onRemove",
+					"from": "guidedModel.Sistema.events.onRemove"
+				}
+			]
+		},
+		{
+			"name": "DataClass2",
+			"className": "Item",
+			"collectionName": "ItemCollection",
+			"scope": "public",
+			"attributes": [
+				{
+					"name": "UUID",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"type": "uuid",
+					"primKey": true
+				},
+				{
+					"name": "catalogo",
+					"scope": "public",
+					"path": "Catalogo",
+					"type": "Catalogo",
+					"kind": "relatedEntity"
+				},
+				{
+					"name": "codigo",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
+				},
+				{
+					"name": "nombre",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "precioSugerido",
+					"kind": "storage",
+					"scope": "public",
+					"type": "number"
+				},
+				{
+					"name": "proyectoDetalleCollection",
+					"scope": "public",
+					"reversePath": true,
+					"path": "item",
+					"type": "ProyectoDetalleCollection",
+					"kind": "relatedEntities"
+				}
+			]
+		},
+		{
+			"name": "EntradaDirectorio",
+			"className": "EntradaDirectorio",
+			"collectionName": "EntradaDirectorioCollection",
+			"scope": "publicOnServer",
+			"attributes": [
+				{
+					"name": "UUID",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"type": "uuid",
+					"primKey": true
+				},
+				{
+					"name": "contacto",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "Contacto",
+					"path": "Contacto"
+				},
+				{
+					"name": "sistema",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "Sistema",
+					"path": "Sistema"
+				},
+				{
+					"name": "alias",
+					"kind": "storage",
+					"scope": "public",
+					"not_null": true,
+					"type": "string"
+				},
+				{
+					"name": "direccion",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "telefono",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "cargo",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "isEmpleado",
+					"kind": "storage",
+					"scope": "protected",
+					"type": "bool"
+				},
+				{
+					"name": "isProveedor",
+					"kind": "storage",
+					"scope": "protected",
+					"type": "bool"
+				},
+				{
+					"name": "isCliente",
+					"kind": "storage",
+					"scope": "protected",
+					"type": "bool"
+				}
+			]
+		},
+		{
+			"name": "EntradaEmpleado",
+			"className": "EntradaEmpleado",
+			"collectionName": "EntradaEmpleadoCollection",
+			"scope": "public",
+			"extends": "EntradaDirectorio",
+			"restrictingQuery": [
+				{
+					"queryStatement": "isEmpleado == true"
+				}
+			],
+			"attributes": [
+				{
+					"name": "isProveedor",
+					"kind": "removed"
+				},
+				{
+					"name": "isCliente",
+					"kind": "removed"
+				},
+				{
+					"name": "empresa",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "Empresa",
+					"path": "Empresa"
+				},
+				{
+					"name": "proyectoCollection",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "ProyectoCollection",
+					"reversePath": true,
+					"path": "contacto"
+				}
+			],
+			"events": [
+				{
+					"kind": "onInit",
+					"from": "guidedModel.EntradaEmpleado.events.onInit"
+				}
+			]
+		},
+		{
+			"name": "EntradaProveedor",
+			"className": "EntradaProveedor",
+			"collectionName": "EntradaProveedorCollection",
+			"scope": "public",
+			"extends": "EntradaDirectorio",
+			"restrictingQuery": [
+				{
+					"queryStatement": "isProveedor == true"
+				}
+			],
+			"attributes": [
+				{
+					"name": "cargo",
+					"kind": "removed"
+				},
+				{
+					"name": "isEmpleado",
+					"kind": "removed"
+				},
+				{
+					"name": "isCliente",
+					"kind": "removed"
+				}
+			],
+			"events": [
+				{
+					"kind": "onInit",
+					"from": "guidedModel.EntradaProveedor.events.onInit"
+				}
+			]
+		},
+		{
+			"name": "EntradaCliente",
+			"className": "EntradaCliente",
+			"collectionName": "EntradaClienteCollection",
+			"scope": "public",
+			"extends": "EntradaDirectorio",
+			"restrictingQuery": [
+				{
+					"queryStatement": "isCliente == true"
+				}
+			],
+			"attributes": [
+				{
+					"name": "cargo",
+					"kind": "removed"
+				},
+				{
+					"name": "isEmpleado",
+					"kind": "removed"
+				},
+				{
+					"name": "isProveedor",
+					"kind": "removed"
+				}
+			],
+			"events": [
+				{
+					"kind": "onInit",
+					"from": "guidedModel.EntradaCliente.events.onInit"
+				}
+			]
+		},
+		{
+			"name": "Proyecto",
+			"className": "Proyecto",
+			"collectionName": "ProyectoCollection",
+			"scope": "public",
+			"attributes": [
+				{
+					"name": "UUID",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"type": "uuid",
+					"primKey": true
+				},
+				{
+					"name": "folio",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"autosequence": true,
+					"type": "long64",
+					"indexKind": "auto"
+				},
+				{
+					"name": "nombre",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "emisor",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "EntradaEmpleado",
+					"path": "EntradaEmpleado"
+				},
+				{
+					"name": "contacto",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "EntradaEmpleado",
+					"path": "EntradaEmpleado"
+				},
+				{
+					"name": "fechaEmision",
+					"kind": "storage",
+					"scope": "public",
+					"type": "date",
+					"simpleDate": false
+				},
+				{
+					"name": "isNegocio",
+					"kind": "storage",
+					"scope": "public",
+					"type": "bool"
+				},
+				{
+					"name": "proyectoAtributoCollection",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "ProyectoAtributoCollection",
+					"reversePath": true,
+					"path": "proyecto"
+				},
+				{
+					"name": "proyectoDetalleCollection",
+					"scope": "public",
+					"reversePath": true,
+					"path": "proyecto",
+					"type": "ProyectoDetalleCollection",
+					"kind": "relatedEntities"
+				},
+				{
+					"name": "proyectoCondicionCollection",
+					"scope": "public",
+					"reversePath": true,
+					"path": "proyecto",
+					"type": "ProyectoCondicionCollection",
+					"kind": "relatedEntities"
+				}
+			]
+		},
+		{
+			"name": "Presupuesto",
+			"className": "Presupuesto",
+			"collectionName": "PresupuestoCollection",
+			"scope": "public",
+			"extends": "Proyecto",
+			"attributes": [
+				{
+					"name": "isNegocio",
+					"kind": "removed"
+				},
+				{
+					"name": "contacto",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "EntradaEmpleado",
+					"path": "EntradaEmpleado"
+				},
+				{
+					"name": "fechaEmision",
+					"kind": "storage",
+					"scope": "public",
+					"type": "date",
+					"simpleDate": false
+				},
+				{
+					"name": "proyectoAtributoCollection",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "ProyectoAtributoCollection",
+					"path": "proyecto"
+				}
+			]
+		},
+		{
+			"name": "Negocio",
+			"className": "Negocio",
+			"collectionName": "NegocioCollection",
+			"scope": "public",
+			"extends": "Proyecto",
+			"restrictingQuery": [
+				{
+					"queryStatement": "isNegocio == true"
+				}
+			],
+			"attributes": [
+				{
+					"name": "isNegocio",
+					"kind": "removed"
+				},
+				{
+					"name": "contacto",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "EntradaEmpleado",
+					"path": "EntradaEmpleado"
+				},
+				{
+					"name": "fechaEmision",
+					"kind": "storage",
+					"scope": "public",
+					"type": "date",
+					"simpleDate": false
+				},
+				{
+					"name": "proyectoAtributoCollection",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "ProyectoAtributoCollection",
+					"path": "proyecto"
+				}
+			]
+		},
+		{
+			"name": "ProyectoAtributo",
+			"className": "ProyectoAtributo",
+			"collectionName": "ProyectoAtributoCollection",
+			"scope": "public",
+			"attributes": [
+				{
+					"name": "UUID",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"type": "uuid",
+					"primKey": true
+				},
+				{
+					"name": "proyecto",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "Proyecto",
+					"path": "Proyecto"
+				},
+				{
+					"name": "clave",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "ProyectoAtributoClave",
+					"path": "ProyectoAtributoClave"
+				},
+				{
+					"name": "valor",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "ProyectoAtributoValor",
+					"path": "ProyectoAtributoValor"
+				},
+				{
+					"name": "contenido",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "ProyectoAtributoClave",
+			"className": "ProyectoAtributoClave",
+			"collectionName": "ProyectoAtributoClaveCollection",
+			"scope": "public",
+			"attributes": [
+				{
+					"name": "UUID",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"type": "uuid",
+					"primKey": true
+				},
+				{
+					"name": "sistema",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "Sistema",
+					"path": "Sistema"
+				},
+				{
+					"name": "dato",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "proyectoAtributoValorCollection",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "ProyectoAtributoValorCollection",
+					"reversePath": true,
+					"path": "atributo"
+				},
+				{
+					"name": "proyectoAtributoCollection",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "ProyectoAtributoCollection",
+					"reversePath": true,
+					"path": "clave"
+				},
+				{
+					"name": "isAbierto",
+					"kind": "storage",
+					"scope": "public",
+					"type": "bool"
+				},
+				{
+					"name": "isActivo",
+					"scope": "public",
+					"type": "bool",
+					"kind": "storage"
+				}
+			]
+		},
+		{
+			"name": "ProyectoAtributoValor",
+			"className": "ProyectoAtributoValor",
+			"collectionName": "ProyectoAtributoValorCollection",
+			"scope": "public",
+			"attributes": [
+				{
+					"name": "UUID",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"type": "uuid",
+					"primKey": true
+				},
+				{
+					"name": "atributo",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "ProyectoAtributoClave",
+					"path": "ProyectoAtributoClave"
+				},
+				{
+					"name": "dato",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "proyectoAtributoCollection",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "ProyectoAtributoCollection",
+					"reversePath": true,
+					"path": "valor"
+				}
+			]
+		},
+		{
+			"name": "ProyectoDetalle",
+			"className": "ProyectoDetalle",
+			"collectionName": "ProyectoDetalleCollection",
+			"scope": "public",
+			"attributes": [
+				{
+					"name": "UUID",
+					"kind": "storage",
+					"scope": "public",
+					"type": "uuid",
+					"primKey": "true",
+					"unique": "true"
+				},
+				{
+					"name": "proyecto",
+					"scope": "public",
+					"path": "Proyecto",
+					"type": "Proyecto",
+					"kind": "relatedEntity"
+				},
+				{
+					"name": "item",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "Item",
+					"path": "Item"
+				},
+				{
+					"name": "categoria",
+					"scope": "public",
+					"path": "Catalogo",
+					"type": "Catalogo",
+					"kind": "relatedEntity"
+				},
+				{
+					"name": "descripcion",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "cantidad",
+					"kind": "storage",
+					"scope": "public",
+					"type": "number"
+				},
+				{
+					"name": "precioUnitario",
+					"kind": "storage",
+					"scope": "public",
+					"type": "number"
+				}
+			]
+		},
+		{
+			"collectionName": "CatalogoCollection",
+			"className": "Catalogo",
+			"attributes": [
+				{
+					"name": "UUID",
+					"kind": "storage",
+					"type": "uuid",
+					"primKey": "true",
+					"autosequence": true,
+					"unique": true
+				},
+				{
+					"name": "sistema",
+					"scope": "public",
+					"path": "Sistema",
+					"type": "Sistema",
+					"kind": "relatedEntity"
+				},
+				{
+					"name": "nombre",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
+				},
+				{
+					"name": "itemCollection",
+					"scope": "public",
+					"reversePath": true,
+					"path": "catalogo",
+					"type": "ItemCollection",
+					"kind": "relatedEntities"
+				},
+				{
+					"name": "proyectoDetalleCollection",
+					"scope": "public",
+					"reversePath": true,
+					"path": "categoria",
+					"type": "ProyectoDetalleCollection",
+					"kind": "relatedEntities"
+				}
+			],
+			"primKey": "UUID"
+		},
+		{
+			"collectionName": "ProyectoCondicionCollection",
+			"className": "ProyectoCondicion",
+			"attributes": [
+				{
+					"name": "UUID",
+					"kind": "storage",
+					"type": "uuid",
+					"autosequence": true,
+					"unique": "true",
+					"primKey": "true"
+				},
+				{
+					"name": "proyecto",
+					"scope": "public",
+					"path": "Proyecto",
+					"type": "Proyecto",
+					"kind": "relatedEntity"
+				},
+				{
+					"name": "validezPresupuesto",
+					"scope": "public",
+					"type": "duration",
+					"kind": "storage"
+				},
+				{
+					"name": "fechaEntrega",
+					"scope": "public",
+					"type": "date",
+					"kind": "storage"
+				},
+				{
+					"name": "formaPago",
+					"scope": "public",
+					"path": "ProyectoCondicionPago",
+					"type": "ProyectoCondicionPago",
+					"kind": "relatedEntity"
+				},
+				{
+					"name": "observacion",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
+				}
+			],
+			"primKey": "UUID"
+		},
+		{
+			"collectionName": "ProyectoCondicionAtributoCollection",
+			"className": "ProyectoCondicionAtributo",
+			"attributes": [
+				{
+					"name": "UUID",
+					"kind": "storage",
+					"type": "uuid",
+					"primKey": "true",
+					"unique": "true"
+				},
+				{
+					"name": "proyecto",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
+				},
+				{
+					"name": "clave",
+					"scope": "public",
+					"path": "ProyectoCondicionAtributoClave",
+					"type": "ProyectoCondicionAtributoClave",
+					"kind": "relatedEntity"
+				},
+				{
+					"name": "contenido",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
+				}
+			]
+		},
+		{
+			"collectionName": "ProyectoCondicionAtributoClaveCollection",
+			"className": "ProyectoCondicionAtributoClave",
+			"attributes": [
+				{
+					"name": "UUID",
+					"kind": "storage",
+					"type": "uuid",
+					"primKey": "true",
+					"unique": "true"
+				},
+				{
+					"name": "sistema",
+					"scope": "public",
+					"path": "Sistema",
+					"type": "Sistema",
+					"kind": "relatedEntity"
+				},
+				{
+					"name": "dato",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
+				},
+				{
+					"name": "proyectoCondicionAtributoCollection",
+					"scope": "public",
+					"reversePath": true,
+					"path": "clave",
+					"type": "ProyectoCondicionAtributoCollection",
+					"kind": "relatedEntities"
+				}
+			],
+			"primKey": "UUID"
+		},
+		{
+			"collectionName": "ProyectoCondicionPagoCollection",
+			"className": "ProyectoCondicionPago",
+			"attributes": [
+				{
+					"name": "UUID",
+					"kind": "storage",
+					"type": "uuid",
+					"primKey": "true",
+					"unique": "true"
+				},
+				{
+					"name": "dato",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
+				},
+				{
+					"name": "proyectoCondicionCollection",
+					"scope": "public",
+					"reversePath": true,
+					"path": "formaPago",
+					"type": "ProyectoCondicionCollection",
+					"kind": "relatedEntities"
+				}
+			]
+		}
+	],
+	"type": []
+}
